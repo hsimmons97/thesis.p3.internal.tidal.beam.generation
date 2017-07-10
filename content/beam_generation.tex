@@ -1,0 +1,99 @@
+%\documentclass[12pt]{article}
+%\usepackage[margin=1 in, head=0.9 in]{geometry}
+%\usepackage{fancyhdr}
+%\usepackage{listings}
+%\usepackage{caption}
+%\usepackage{color}
+%\usepackage{xcolor}
+%\usepackage{caption, apacite}
+%\DeclareCaptionFont{white}{\color{white}}
+%\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+%\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+%\usepackage{graphicx}
+%\usepackage{amsmath, amssymb, amsthm}
+%\usepackage[all,cmtip]{xy}
+%\pagestyle{fancy}
+\input{/home/dmitry/Work/Research/thesis/FINALE/settings.tex}
+
+\begin{document}
+
+\title{Generation and characteristic of internal tidal beam in Tasman Sea}
+\maketitle
+
+\begin{itemize}
+\item Why did you work on this problem?
+This problem is necessary part of description of the beam reflection from the Tasman Slope. In the simulations I found that the beam shows both variations in its position and energetics. More importantly, the beam represented  a complex wave field that were found already at generation site. \textbf{Than logically the question what makes the beam? how its properties governed by generation? and more importantly, how they can vary arose?} To answer all of these questions it was necessary to describe generation mechanism.
+
+\item What did you find out?
+The mechanism of generation is more complex as just perturbation of the fluid column by tidal currents. This is due to complex bathymetry in the region where multiple sources for internal tidal energy are located. The complex wave field than shapes generation since conversion from barotropic tide into baroclinic wave became dependent on remotely generated signals. But luckily I was able to find the main source for variability that is a position of baroclinic standing wave. And energy transports associated with it define where the major beam's generation site is located. But again since generation occurs at several spots the beam itself is not just one wave component, but rather coupled together components which create spatial variations of beam's properties.
+
+\item How did you tackle it?
+I have used previously developed directional decomposition method which allowed me to construct energy budgets and estimate the transports. And than by writing down simple analytical model for standing wave the predictions were made and this helped to show how the conversion rates vary spatially due to energy transports associated with the standing wave. And than to connect the hotspots for conversion a simple inverse model based on previous work was developed. It was able to show that the beam appearence in direct relation to spatial distribution of generation. But since it was used elliptical waves, I was able to show transition from plane wave regime of propagation into cylindrical wave such that in the first part the beam shows large inhomogeneities and later it is more well behaving.
+
+\item How do you know your results are valid?
+This work quite well corresponds to have already developed ideas on internal tidal waves and their intereference.
+\item How do your results fit into the big picture?
+The process of internal tide generation in presence of remote signal are currently poor understood. Apparently, they are more wide spread than it is given account to. This work might be considered as a first step towards better understanding. And second contribution such tidal beams appear everywhere in Pacific Ocean their properties and variability are not well known. This work helps to identify future observational efforts to test ideas presented here and develop new ideas.
+
+\item Is further work needed?
+Field observations are necessary.
+
+\end{itemize}
+
+\section{Abstract}
+Macquarie Ridge south of New Zealand is a strong generator of internal tidal waves (ITs) which later form a prominent internal tidal beam. The mechanism of barotropic energy conversion into baroclinic field is investigated by means of numerical experiments with prescribed mesoscale conditions corresponding to Januaries of 2012-2015. The obtained energy transfer rates into IT mode-1 show variability both in spatial distribution and its magnitude. This variability is controlled by resonance between local barotropic forcing and remotely generated ITs. The remote baroclinic signal takes its origin at an easterly located the Campbell Plateau. Their pathway is drastically different from the progressive plane waves due to interference with the ridge originating waves and consequent formation of a standing Poincare wave. This complex internal tide environment is modulated by the ratio of the respective East and West traveling components. \textit{The west part associated with the plateau experiences variability following the upper ocean stratification. (this currently questionable) Under 2014 conditions the Tasman Sea subtropical frontal zone was located northward of the region, leading to weaker stratification, lower amplitude waves, a more developed standing wave and hence, less energy transfer into the internal tidal beam. Conversely, in 2015 an intrusion of warm subtropical waters created conditions for stronger generation resulting in high across Macquarie ridge energy transport and larger conversion rates. This mechanism of variability in response to the upper ocean processes suggests a seasonal cycle in the generation of the internal tidal beam, leading to weaker energy levels during austral winter and stronger in the summer.}
+The inverse model based on elliptical waves shows that the beam undergoes changes in its appearence similar to Fresnel and Fraunhoffer diffraction in optics.
+
+\section{Introduction}
+Conversion of bt to bc large scale picture: beams, nonspatial uniformity\\
+Remote tides and local forcing: Sam, Carry\\
+Resonance, Luzon Strait: : Echeverri, Buijsman, Pickering\\
+Macquarie Ridge and Tasman Beam\\
+Outline\\
+
+\section{Numerical experiments and analysis}
+\subsection{Numerical experiments}
+\subsection{Internal tide analysis}
+From the model output transfer of barotropic energy into mode-1 internal tide was diagnosed by
+\begin{equation}
+C_{bt,~1} = \frac{1}{T} \int_0^T \nabla \cdot \vec{u}_{bt} \cdot \tilde{p}_{1} dt
+\end{equation}
+with the first term representing barotropic forcing and second - mode-1 baroclinic pressure anomaly.
+
+\section{Results}
+\subsection{Beam and conversion}
+Uniform: Three beams similar to satelite. Central primarily originates in main Macquarie Ridge. There is large  variability in the northern, southern, but central is stable.
+Figure mode-1 and conversion everywhere along Macquarie Ridge.
+
+\subsection{Conversion rates and resonance}
+Model conversion rates and knife edge, Enhancement of generation due to remote propagating tides\\
+Spatial maps of conversion rates show variation in magnitude and location of conversion hotspots (Fig. 1). The energy transfers predominantly occur along steep flunks of two seamountains. The most striking difference was found between '2014' and 'uniform' experiment. 
+
+What is the goal of Figure with Conversion?
+a) To show general distribution and familiarize reader with study region
+b) To show variation in hotspots location and their magnitude
+c) Show smaller than expected from knife edge solution and small variability due to environmental conditions
+
+\subsection{Standing wave variation}
+Standing wave as an agent for intensification; its variability
+\subsection{HYCOM variation}
+Variability in generation in response to environmental conditions (HYCOM)
+\subsection{Beam variability}
+Conversion hotspots and beam (inverse model)
+\subsection{Beam structure?}
+
+\section{Discussion and Conclusions}
+
+\newpage{TO DO LIST}
+\begin{itemize}
+\item Polish: Clin and energy budget, knife edge, WKB-stretching, standing wave
+\item Inverse model, elliptic waves are the way to go, why the phase can not be planar over much smaller stripes, something wrong with formulation of generation problem. See acoustics paper.
+\item Why in new experiments the beam did not move?
+\item Reasons for incoherence?
+\item Is there going to be any seasonal cycle?
+\end{itemize}
+
+\bibliographystyle{apacite}
+\bibliography{/home/dmitry/Bibtex_lib/}
+
+\end{document}
