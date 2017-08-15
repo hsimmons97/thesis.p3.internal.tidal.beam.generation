@@ -78,9 +78,77 @@ c) Show smaller than expected from knife edge solution and small variability due
 Standing wave as an agent for intensification; its variability
 \subsection{HYCOM variation}
 Variability in generation in response to environmental conditions (HYCOM)
-\subsection{Beam variability}
-Conversion hotspots and beam (inverse model)
-\subsection{Beam structure?}
+\subsection{Beam structure}
+The mid basin properties of the tidal beam include:
+\begin{itemize}
+\item wobbling
+\item slightly increased phase speed
+\item large deviations of group speed
+\item wavefronts
+\item spotty APE and HKE
+\end{itemize}
+These properties point to use that the beam is a standing wave. But no apparent reflected wave is seen. Generation at Southern Tasman Plateau and Cascade Seamount can not be a source for opposite traveling waves due to their weakness. Additionally, directional spectra or plane wave fit does not show presence of such waves. But here we will show that generation indeed is reponsible for wobbly pattern of the tidal beam and present a method that connects conversion pattern along Macquarie Ridge with mid basin characteristics of the beam.
+\subsubsection{Analytical waveforms of generated internal tides at knige-edge ridge}
+Let consider a simplified problem of the internal tide generation at a three dimensional ridge. That is generating topography has extent in along x-axis, $a$, but infinitely small width. We will not pursue full solution of the problem and will not seek actual amplitudes of baroclinic modes, but rather concentrate on defining spatial pattern of the generated waves (might move up to opening). Under such problem statement the actual height is of no importance. And hence, in frame reference traveling with barotropic current, the topography becomes a piston-alike wavemaker that sends out the lowest mode internal tide. Its behavior in flat bottom ocean is well represented by Laplace tidal equations (cf \cite{kelly2012cascade}):
+\begin{align}
+\vec{u}_t + 2 \Omega \vec{k} \times \vec{u} = - \frac{1}{\rho_0} \nabla \cdot p\\
+\nabla \cdot \vec{u} = -(\frac{1}{N^2 - \omega^2}p_z)_{tz}
+\end{align}
+with boundary conditions on the ridge,
+\begin{equation}
+\vec{u}\cdot \vec{n}|_{ridge} = \vec{u}_{bt} \cdot \vec{n} |_{ridge}
+\end{equation}
+And boundary condition in the infinity implying outgoing waves. Note that barotropic current, in general, is given as a current ellipse written in complex form as $\vec{u}_{bt} = u_{bt} + i v_{bt}$. This means that the boundary condition does not have a simple harmonic form. But the barotropic current can be decomposed to clockwise (CW) and counterclockwise components,
+\begin{equation}
+\vec{u}_{bt} = W_{CW} e^{-(i \omega t - \phi_{CW})} + W_{CCW} e^{(i \omega t + \phi_{CCW})}
+\end{equation}
+and the generation of internal tide can be solved separately for two oppositely rotating currents. In further discussion the only one component (CCW) is taken care of since a solution will have similar form with differences arising in sign in front of tidal frequency.\\
+Considering rigid lid approximation and impermeable bottom equations for eigen modes is solved such that wavelength of corresponding mode is introduced. Than the dynamical equations can be reformulated as Helmholtz equation with harmonic temporal dependence implied and appropriate polarization relations,
+\begin{align}
+\nabla^2 p + k_n^2 p = 0\\
+u = \frac{-i \omega p_x + f p_y}{\omega^2 - f^2},~v = \frac{-i \omega p_y - f p_x}{\omega^2 - f^2}
+\end{align}
+Since the problem is now formulated in terms of pressure only, boundary condition takes the following form (\cite{greenspan1968theory}),
+\begin{equation}
+\Big[ \frac{-i \omega p_y - f p_x}{\omega^2 - f^2} \Big]_{ridge} = \vec{u}_{BT}|_{ridge}
+\end{equation}
+The above equations (5-8) state generation of internal tides by vibrating strip of width $a$. Such problem was solved for radiation of acoustic waves by \cite{morse1946methods}. Since in Cartesian coordinates the strip boundary condition does not allow separation of variables, one can employ elliptic coordinate system,
+\begin{equation*}
+x = \frac{a}{2} \cosh \mu \cos \theta,~y = \frac{a}{2} \sinh \mu \sin \theta
+\end{equation*}
+where edges of the strip will be focii of ellipse, boundary condition will take simpler form,
+\begin{align}
+\Big[ \frac{-i \omega p_{\mu} + f p_{\theta}}{\omega^2 - f^2} \Big]_{\mu = 0} = \frac{a}{2} \sin \theta (\vec{u}_{BT}|_{\mu = 0})
+\end{align}
+The factor $\frac{a}{2} \sin \theta$ arises via conversion from Cartesian to elliptical derivatives. Note change of sign for $p_{theta}$ because opposite growth of $\theta$ argument to $x$ argument. Laplace operator in the elliptical coordinates has eigensolutions (''sloshing modes") in form of Mathieu functions (\cite{stratton2007electromagnetic}) that solution for the emitted waves will have form of,
+\begin{equation}
+p \sim \sum_{j} [Se_j, So_j](h, \theta) [Je_j, Jo_j, Ye_j, Yo_j](h, \mu)
+\end{equation}
+with $Se_j,~So_j$ - angular Mathieu functions of order $j$ corresponding to $\cos$ and $\sin$, $Je_j,~Jo_j$ and $Ye_j,~Yo_j$ - radial Mathieu functions of the first and second kind of order $j$ corresponding to Bessel functions. The physical parameter that sets Mathieu functions behavior is $h = {a k_n}{4} $ so that in large distance limit, $h \mu \gg 1,~rk_n \gg a$, they will represent circular harmonics.\\
+Now RHS of boundary condition (9) can be expressed in series of Mathieu functions,
+\begin{equation}
+\sin \theta = \sum_{j = 0}^{\infty} C_{2j + 1} So_{2j + 1} (\theta)
+\end{equation}
+with coefficients $C_{2j + 1}$ defined by normalization constants $N_{2j + 1} = \int_{0}^{2\pi} So_{2j + 1}^2(\theta) d \theta$ and the first Fourier coefficient of $So_{2j + 1}$. The above series for $\sin$ and form of the boundary condition suggest solution in the form,
+\begin{equation}
+p(\mu, \theta) = \sum_{j = 0}^{\infty} \big( A_{2j+1} So_{2j + 1}(\theta) + B_{2j+1} Se_{2j + 1}(\theta) \big) Ho^{1}_{2j + 1}(\mu)
+\end{equation}
+Here $Ho^{1}_{2j + 1}(\mu) = Jo_{2j + 1} + i Yo_{2j + 1}$ is a Hankel-Mathieu function. For CCW component to ensure condition for outgoing radiation, the sign should be different, so $Ho^{2}_{2j + 1}(\mu) = Jo_{2j + 1} - i Yo_{2j + 1}$.\\
+Now substituting (11, 12) into (9) the unknown coefficients $A,~B$ are obtained,
+\begin{align*}
+(-i\omega (\sum A So + B Se) Ho^{\prime} - f (\sum A So^{\prime} + B Se^{\prime}) Ho) = \sum (\omega^2 - f^2) C So
+\end{align*}
+At first, multiplying above equation by $So_{2m + 1}$ and taking integral from 0 to $2 \pi$, so that $\int_{0}^{2\pi} So_{2m + 1} Se_{2j + 1} d \theta = \int_0^{2 \pi} So_{2j + 1}^{\prime} So_{2m + 1} d \theta = 0,~\int_0^{2 \pi} So_{2m + 1} So_{2m+1} d \theta = No_{2m + 1},~\int_0^{2 \pi} So_{2m + 1} Se_{2j + 1}^{\prime} d \theta = -{N^{\prime}}^{2m+1}_{2j + 1}$. In the last statement orthogonality between $So$ and $Se^{\prime}$ is not satisfied. Equation on each order is obtained
+\begin{align}
+(-i \omega A_{2m + 1} No_{2m + 1}^o Ho_{2m + 1}^{\prime} - f \sum_{j} B_{2j + 1} {Neo^{\prime}}^{2m + 1}_{2j + 1} Ho_{2j + 1}) = C No_{2m + 1}
+\end{align}
+And at second, carrying out the same procedure but with $Se_{2j + 1}$,
+\begin{align}
+(-i \omega B_{2m + 1} Ne_{2m + 1} Ho_{2m + 1}^{\prime} + f \sum_j A_{2j + 1} {Noe^{\prime}}^{2m + 1}_{2j + 1} Ho_{2j + 1}) = 0
+\end{align}
+Note that $\int_0^{2\pi} Se^{\prime}_{2j + 1} So_{2m + 1} d \theta = -\int_0^{2\pi} So^{\prime}_{2j + 1} Se_{2m + 1} d \theta$, i.e. ${Noe^{\prime}}^{2m + 1}_{2j + 1} = -({Neo^{\prime}}^{2m + 1}_{2j + 1})^T$.\\
+Equations (13) and (14) form a linear system to find coefficients for different component of the total field. These equations are solved numerically with $j_{max} = 5$ due to rapid convergence of the involved series.
+\subsubsection{Inverse solution}
 
 \section{Discussion and Conclusions}
 
@@ -93,7 +161,7 @@ Conversion hotspots and beam (inverse model)
 \item Is there going to be any seasonal cycle?
 \end{itemize}
 
-\bibliographystyle{apacite}
-\bibliography{/home/dmitry/Bibtex_lib/}
+\bibliographystyle{apa}
+\bibliography{/home/dmitry/Bibtex_lib/my_first_lib}
 
 \end{document}
