@@ -3,3 +3,23 @@ This chapter describes generation of the internal tidal beam in Tasman Sea and i
 2) The standing wave is the remote signal; its variability will define the beam.
 3) Difference in the beam generation pattern will affect its mid-basin properties.
 4) There is a transition from Fresnel to Fraunhofer diffraction zones.
+
+\begin{itemize}
+\item Why did you work on this problem?
+This problem is necessary part of description of the beam reflection from the Tasman Slope. In the simulations I found that the beam shows both variations in its position and energetics. More importantly, the beam represented  a complex wave field that were found already at generation site. \textbf{Than logically the question what makes the beam? how its properties governed by generation? and more importantly, how they can vary arose?} To answer all of these questions it was necessary to describe generation mechanism.
+
+\item What did you find out?
+The mechanism of generation is more complex as just perturbation of the fluid column by tidal currents. This is due to complex bathymetry in the region where multiple sources for internal tidal energy are located. The complex wave field than shapes generation since conversion from barotropic tide into baroclinic wave became dependent on remotely generated signals. But luckily I was able to find the main source for variability that is a position of baroclinic standing wave. And energy transports associated with it define where the major beam's generation site is located. But again since generation occurs at several spots the beam itself is not just one wave component, but rather coupled together components which create spatial variations of beam's properties.
+
+\item How did you tackle it?
+I have used previously developed directional decomposition method which allowed me to construct energy budgets and estimate the transports. And than by writing down simple analytical model for standing wave the predictions were made and this helped to show how the conversion rates vary spatially due to energy transports associated with the standing wave. And than to connect the hotspots for conversion a simple inverse model based on previous work was developed. It was able to show that the beam appearence in direct relation to spatial distribution of generation. But since it was used elliptical waves, I was able to show transition from plane wave regime of propagation into cylindrical wave such that in the first part the beam shows large inhomogeneities and later it is more well behaving.
+
+\item How do you know your results are valid?
+This work quite well corresponds to have already developed ideas on internal tidal waves and their intereference.
+\item How do your results fit into the big picture?
+The process of internal tide generation in presence of remote signal are currently poor understood. Apparently, they are more wide spread than it is given account to. This work might be considered as a first step towards better understanding. And second contribution such tidal beams appear everywhere in Pacific Ocean their properties and variability are not well known. This work helps to identify future observational efforts to test ideas presented here and develop new ideas.
+
+\item Is further work needed?
+Field observations are necessary.
+
+\end{itemize}
