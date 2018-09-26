@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \input{/home/dmitry/Work/Research/thesis/FINALE/settings.tex}
-\graphicspath{{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/}}
+\doublespacing
+%\graphicspath{{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/}}
 
 %\documentclass[PhD_Thesis.tex]{subfiles}
 
@@ -11,85 +12,140 @@
 	}
 
 \section*{Abstract}
-Macquarie Ridge south of New Zealand is a strong generator of internal tidal waves (ITs) which 
-later form a prominent internal tidal beam, a tight filament of baroclinic tidal energy. The 
-mechanism of barotropic energy conversion into baroclinic field is investigated by means of 
-numerical experiments with prescribed mesoscale conditions corresponding to different background 
-conditions. The obtained energy transfer rates into IT mode-1 show variability both in its 
-magnitude and spatial distribution. This variability is controlled by resonance between local 
-barotropic forcing and remotely generated ITs. The remote baroclinic signal takes its origin at an 
-easterly located Campbell Plateau. Their pathway is drastically different from the progressive 
-plane waves due to interference with the ridge originating waves and consequent formation of a 
-standing Poincare wave. This complex internal tide environment is modulated by the ratio of the 
-respective East and West traveling components. \textit{The west part associated with the plateau 
-experiences variability following the upper ocean stratification. (this currently questionable)} 
-Under conditions of the Tasman Sea subtropical frontal zone located northward of the region, 
-leading to weaker stratification, lower amplitude waves, a more developed standing wave and hence, 
-less energy transfer into the internal tidal beam. Conversely, under different realization an 
-intrusion of warm subtropical waters created conditions for stronger generation resulting in high 
-across Macquarie ridge energy transport and larger conversion rates. This mechanism of variability 
-is further shown to affect position of the internal tidal beam. It is characterized by complex 
-pattern of nodes and antinodes. The simple inverse analytical models shows that spatially 
-wide-spread generation is one to blame. Than it is shown that the beam wobbles as a result in 
-shifting of internal tide production hotspots. This identifies a reason for beam long range 
-nonstationarity as a result of generation nonstationarity.\\
-The inverse model based on elliptical waves shows that the beam undergoes changes in its appearence similar to Fresnel and Fraunhoffer diffraction in optics.
+Macquarie Ridge south of New Zealand is a moderate generator of internal tidal waves (ITs) forming 
+a tidal beam. The beam was subject to study of TTIDE/TBEAM field program. Here, beam's generation 
+and characteristics are investigated by means of numerical experiments with prescribed different 
+mesoscale conditions. At the strongest site, conversion of barotropic tidal produce on average 
+1.6 GW of baroclinic mode-1 and with a range of $30~\%$. This variation is mainly associated with 
+amplitude of remote ITs originating on slopes of Campbell Plateau. The two almost parallel 
+conversion sites form a system similar to a semi-enclosed resonator. Its efficiency of energy 
+extraction is shown to depend on local stratification by (a) changing WKB-scaled topography and (b) 
+phase lag between the sites. The produced baroclinic waves are radiated into deep ocean as a 
+spatially tight beam. Obtained here far-field energy characteristics ($152^{\circ}$ and 4 kW/m ) 
+are in a good agreement with previously reported altimeter and in-situ observations. Though, the 
+numerical experiments points to spatial variation. These modulations arise from interference with 
+intricate wave field setting in due to reflection from Tasmania and multiple generators found 
+throughout Tasman Basin. Among experiments variability arises both due to spatial changes of 
+production hot spots along Macquarie Ridge and interaction with mesoscale eddies found near 
+Tasmania. Effect of the former process is estimated by a semi-analytical model. Besides a direct 
+dependence of baroclinic tide amplitude on conversion magnitude, its spatial distribution can 
+modulate beam heading by $\pm 3^{\circ}$ which results in far-field position shifts. (No ending, no 
+strong statement so far).
+Macquarie Ridge, Tasman Basin where the, where not.\\
+%This might lead to large variation of beam's magnitude. In the far-field beam's can also be 
+%refractive by eddy field. All of these processes are discussed in terms of the field observations. 
 
 \section{Introduction}
-Baroclinic semidiurnal tides originate as a strong barotropic flow occurs over steep topography in stratified ocean. This process is though as a scattering of barotropic tidal energy into baroclinic motions (\cite{ROG:ROG324}). It is quite definitely known that the scattering has a large impact on energetics barotropic tide and is a part of energy dissipation (\cite{egbert2000significant}, \cite{munk1997once}) with 1/3 of $M_2$ energy being dissipated through generation of internal tide.\\
-Analytical models of internal tide generation points to importance of ratio between direction of 
-internal wave characteristics to bathymetry slope (\cite{garrett2007internal}). Omitting nonlinear 
-regimes for low Froude number flows, highly supercritical slopes will give rise mostly to the 
-gravest mode of internal tide (\cite{echeverri2010internal}). Such a case for Macquarie Ridge 
-located south of New Zealand. Here barotropic tide energy is conversed into largely mode-1 
-baroclinic tide.\\
-Variability of internal tide generation can occur to number of reasons. Stratification could have a direct impact in WKB sense creating less prominent obstacle (\cite{holloway1999internal}). But this phenomena is more pronounced for bathymetry touching pycnocline. More recently, it became apparent that the generation is more unstable in presence of remote baroclinic signals. In the most well studied setting of two parallel ridges a resonance conditions occurs (\cite{echeverri2010internal}, \cite{buijsman2012double}, \cite{buijsman2014three}) that would lead either to intensification or destruction of energy transfers. More generally, phenomena of coupling at internal tide production sites of local generation and remote signal can lead to nonstationarity in wave generation (\cite{Kelly2010a}, \cite{osborne2011spatial}, \cite{kerry2013effects}, \cite{xing1998three}, \cite{buijsman2012modeling}). The notion of variability in generation was observed as well (\cite{pickering2015structure}, \cite{zilberman2011incoherent}). The same phenomena occurs at Macquarie Ridge where behind located Campbell Plateau sends internal tides which results in generation variability.\\
-The ubiquitous feature of mode-1 internal tides as they leave production sites is their appeareance 
-as tightly confined beams of energy propagating without much spatial spreading over large distances 
-(\cite{zhao2016global}). This surprising feature is believed to be related to multiple generation 
-sites (\cite{rainville2010interference}, \cite{terker2014observations}). Especially, this is true 
-for long swaths of generation bathymetry where point source two dimensional models of generation 
-becomes unrealistic (\cite{munroe2005topographic}).\\
-The question of stationarity of the tidal beams is still open. The most obvious reason for 
-variations is nonlinear interaction with variable mesoscale conditions in the open sea 
-(\cite{kerry2016quantifying}, \cite{dunphy2014focusing}, \cite{chavanne2010surface}, 
-\cite{ansong2017semidiurnal}, \cite{dunphy2017low}, \cite{zaron2014time}, 
-\cite{doi:10.1080/03091927509365798}, \citep{kelly2016internal}, \citep{park2006internal}, 
-\cite{rainville2006propagation}). On the first order, refraction by variable stratification and 
-hence, propagation speed is a key processes or reflection at strong frontal zones. Oppositely, here 
-we will provide analysis suggestive for a different point such that variable spatial conversion 
-rates will lead to displacement of Tasman Sea tidal beam.\\
-This is done by investigation of numerical experiments in Regional Ocean Modeling System with 
-different realistic background conditions (Section 2). From derived energy characteristics it is 
-shown that variations occur both at generation regions (Section 3a), but also in open ocean 
-(Section 3b). Then developed analytical solution for spatially confined knife-edge barrier and 
-semi-analytical solution (Section 3c) can describe the beam properties from pure generation 
-picture. This provides rough estimates on generation-related nonstationarity. The work is concluded 
-with inter-comparison between numerical experiments and available observational data (Section 4). 
-In conclusion wide-spread application is provided (Section 5).\\
+Baroclinic semidiurnal tides originate as a strong barotropic flow along topography forces heaving 
+of isopynal surfaces. This process renders scattering of barotropic tidal energy into baroclinic 
+motions \citep{hendershott1981long}. The so dispersed energy constitutes a third of global budget 
+for lunar semidiurnal constituent \citep{egbert2000significant, munk1997once} and contributes 
+significantly to internal wave climate (ref?). At most conversion sites because of highly inclined 
+slopes, internal waves of tidal period (internal tides) are radiated as low baroclinic mode. Due to 
+their large length scales decay rates are subtle. This makes low mode tide efficient in carrying 
+baroclinic energy (kinetic?) over distances comparable to size of ocean basins. While generation 
+sites were identified \citep{morozov1995semidiurnal, simmons2004internal, arbic2010concurrent, 
+zhao2016global}, some 
+were studied in detail \citep{rudnick2003tides, klymak2011breaking, althaus2003internal} and 
+analytical models have been developed \citep{garrett2007internal}, little is known on how fast and 
+where internal tidal energy is dissipated (deposited). A lot of uncertainty arises because of close 
+relation between the waves and the dynamical oceanic medium, so the wave field is subject to 
+continuous change.\\
+Water column stratification directly impacts internal wave dispersion. In fact, analytical models 
+of generation emphasize a ratio between angle of internal wave characteristics to bathymetric slope 
+\citep{garrett2007internal} along with a height of topography as primary quantities in setting 
+conversion levels \citep{llewellyn2003tidal, petrelis2006tidal}. For tall, steeply inclined 
+submarine ridges the energy transfer approaches an upper theoretical limit 
+\citep{petrelis2006tidal, st2003generation} making them to be ``oases" of barotropic tide 
+scattering 
+and internal tide production \citep{morozov1995semidiurnal, egbert2000significant}. Clearly, the 
+energy rates can be modulated by changing buoyancy frequency \citep{holloway1999internal}, 
+especially when seasonal transformation of water properties happens at same depths as the steepest 
+bottom gradients 
+\citep{gerkema2004internal}. Nevertheless, in later field studies it was realized that presence of 
+external baroclinic tidal signal leads to even larger temporal variability \citep{Kelly2010a, 
+zilberman2011incoherent, pickering2015structure}. This might occur as opposite ridge slopes 
+affect each other \citep{nash2004internal, zilberman2011incoherent, echeverri2010internal} or due 
+to spatially inhomogeneous distribution of production hotspots \citep{osborne2011spatial, 
+ponte2013coastal}\footnote{there should a verb here, needs to be restructured}, or as separate 
+topographic features mediate each others generation energy levels \citep{xing1998three, 
+buijsman2012modeling, buijsman2014three}. This study addresses temporal and spatial variability of 
+tide production happening at Macquarie Ridge, south from New Zealand. Quick recourse to a map of 
+Tasman Sea (\fignm{C3:fig:geo.map}) suggests that location of major sea bottom features leads to 
+complex internal tide regime representative both of Kaena Ridge and Luzon Strait.\\
+Macquarie Ridge emits energy forming a spatially confined beam \citep{simmons2004internal, 
+zhao2016global}. This is an ubiquitous characteristic of low mode internal tide propagation in the 
+deep ocean that is thought to be a result of multiple source interference 
+\citep{rainville2010interference}. The Tasman beam carries away most of the 
+conversed energy and partly deposits it on Tasmanian continental slope found $\sim 1000~km$ from 
+the ridge. To detail contributing (concurrent) physical processes several field experiments 
+(TBEAM/TTIDE/Tshelf) were conducted \citep{pinkel2015breaking} along with an investigation of 
+satellite altimetry observations \citep{zhao2018satellite}. The latter results were favorably 
+compared to averaged in-situ measurements \citep{waterhouse2018observations} corroborating 
+(existence of?) northwesterly propagating low mode beam of small decay rate. Nevertheless, the 
+observed temporal variability of the beam's heading and amplitude needs an interpretation to 
+restrain boundary conditions for a problem of shoaling (scattering and reflection?) internal tide 
+on three dimensional topography and consequent energy dissipation \citep{klymak2016reflection}.\\
+The non-stationary behavior in propagation of the baroclinic tidal waves results from interaction 
+with varying oceanographic conditions \citep[e.g.,][]{mooers1975several}. Depending on involved 
+length scales and magnitudes, different regimes can be realized \citep{buhler2014waves}\footnote{I 
+didn't read Buhler, 2014 book, just he discusses 
+in great detail the topic}. On the first order, when the (wave-flow) scales are largely detached as 
+in  
+geometric optics limit, the oceanic conditions simply change mode-1 phase speed and cause wave 
+front refraction \citep{rainville2006propagation, zaron2014time, kelly2016internal}. The phenomena 
+is augmented in presence of considerable mean flows with vertical structure 
+\citep{park2006internal, buijsman2017eq}. This can further produce non negligible Doppler 
+shifting 
+\citep{chavanne2010surface} and shifts of apparent wave frequency in strong vortical flows 
+\citep{kunze1985near}. In the higher orders, nonlinear interactions lead to scattering into 
+high modes \citep{dunphy2014focusing}, directional spreading \citep{wagner2017asymptotic, 
+dunphy2017low} and nonintuitive energy transfers via resonant triad interactions with geostrophic 
+turbulence \citep{ward2010scattering}. Still in typical oceanographic setting the first order 
+mechanisms are the most widespread \citep{kelly2016internal, zaron2014time}. The latter 
+work as well investigated role of generation in the producing time variable far-field. This was  
+ hypothesized by \citep{wunsch1975internal} who suggested that ``energetic beams will be moved 
+comparatively large distances by small changes in angle and may be missed by isolated instruments" 
+\footnote{this is a direct quote, marks are ok?}.\\
+In the setting of Tasman Sea both phenomena are plausible reasons to produce the documented 
+variation 
+in incidence of the low mode tidal beam on Tasman continental slope. To identify cause-and-effect 
+relationship numerical experiments are carried out with different conditions of the oceanic medium 
+(Section 2). Variable levels of internal tide production are examined in Section 3a and 
+resultant beam's characteristics are quantified in its traverse of Tasman Basin (Section 3b). 
+These results are brought together to be studied in terms of a semi-analytical generation 
+model and action of mesoscale (Section 4a). This helps to provide context for the field 
+observations (Section 4b). This follows by conclusions. And in the Appendices mathematical nuances 
+are described in greater detail.
 
 \newpage
 
 \section{Numerical experiments and analysis}
 \subsection{Numerical experiments}
-To study variability of internal tide generation around New Zealand and later propagation numerical 
-simulations were carried out with Regional Ocean Modeling System \citep{shchepetkin2005regional}. 
+To study variability of internal tide generation around New Zealand and its propagation numerical 
+simulations were performed with Regional Ocean Modeling System \citep{shchepetkin2005regional}. 
 The numerical domain covered southern Tasman Sea from subantractic waters of $60^{\circ}$ S 
 to subtropics in $35^{\circ}$ S. And the zonal extent stretched from $142^{\circ}$ to $172^{\circ}$ 
-E. This ensued correct representation of reach regional, oceanographic conditions. The horizontal 
+E. This ensued correct representation of reach regional oceanographic conditions. The horizontal 
 grid spacing was taken to be of $1/32^{\circ}$ corresponding on average to discretization of 3 km 
 in zonal direction and 2.5 km in meridional. The nonuniformly separated, vertical 50 $s$-levels 
 were placed to smoothly follow subsurface terrain.\\
+\begin{figure}
+	\centering
+	\includegraphics[scale = 0.35]{../figures/fig_1.png}
+	\caption{Domain of numerical simulations with geographical locations used in the text}
+	\label{C3:fig:geo.map}
+\end{figure}
 Such discretization of vertical momentum equation tends to induce artificial, horizontal  
 along-slope flows \citep{haidvogel1999numerical} due to errors in reproducing of pressure 
 gradient force. Especially severe errors are made by steep terrain. The misbehavior is usually 
-solved by aritificial smoothing of topography. Here this is done by spatial filtering 
-\footnote{How it was done?}. This procedure has an adverse effect on internal tide generation  
-\citep{di2006numerical} since production sites are found where bottom gradients are large. To 
-test sensibility of numerical setup, a sensitivity study was carried out with simulations of  
+solved by aritificial smoothing of topography. This procedure additionally increases numerical 
+stability, but has an adverse effect on internal tide generation \citep{di2006numerical} since 
+primary production sites are collocated with large topographic gradients. To test the numerical 
+setup, a sensitivity study was carried out with simulations of 
 $1/8^{\circ},~1/16^{\circ},~1/64^{\circ}$ horizontal resolution. The essential for this study 
-internal tide behavior appeared at $1/16^{\circ}$ and converged for $1/32^{\circ}$ and 
-$1/64^{\circ}$ cases where no marked difference was observed, except a substantial increase in 
+internal tide behavior manifested at $1/16^{\circ}$ and converged for $1/32^{\circ}$ and 
+$1/64^{\circ}$ cases. There no marked differences were observed, except a substantial increase in 
 high mode content which is in line with \footnote{previous investigations} 
 \citep{di2006numerical}.\\
 This work addresses the gravest baroclinic mode dynamics in the deep ocean. Spatial extent of 
@@ -97,27 +153,25 @@ waves is large compared to associated vertical displacements. This ensures linea
 propagation without dispersive and nonhydrostatic effects taken place such as fission into 
 solitons. A hydrostatic solver used in ROMS seems to be a proper choice for the simulations. Such 
 simplification in wave dynamics was assumed in previous studies (\citep{carter2008energetics, 
-merrifield2001generation,  merrifield2002model, kerry2013effects}). In the nonhydrostatic 
-simulations \citep{kang2012energetics, zhang2011three} the nonhydrostatic effects are found to be 
-important for shoaling internal tides, while for main part generation follows linear dynamics with 
-vertical accelerations to have a negligible contribution.\\
-\textbf{Frictional forces}\\
+merrifield2001generation,  merrifield2002model, kerry2013effects}). In more dynamically accurate   
+simulations of \citep{kang2012energetics, zhang2011three} the nonhydrostatic effects are found to 
+be important only for internal tides in shallow waters, while for main part generation follows 
+linear dynamics with vertical accelerations to have a negligible contribution.\\
 The horizontal boundary conditions were imposed to be open for depth-averaged, barotropic flows 
-following \footnote{Shchepetkin's condition, is there any reference?}. The baroclinic fields are 
+following recommendations proposed by \citep{marchesiello2001open}. The baroclinic fields are 
 nudged to zero by linear increased lateral viscosity and diffusivity over sponge layers. Through 
 the same outer boundaries numerical simulations were forced with barotropic tide. The tidal 
 currents and sea level are derived from TPXO atlas, version 7.2 \citep{egbert2002efficient} and 
 prescibed as linearly interpolated volume transports. It was used only the largest semidiurnal 
-constituent $M_2$. The amplitude ratio between the principal lunar and solar components are 4-to-1 
+constituent $M_2$. Amplitude ratio between the principal lunar and solar components are 4-to-1 
 suggestive of slight open-ocean spring-neap modulation. The diurnal species are weak in the region 
-except shoals east of New Zealand \citep{walters2001ocean}\footnote{Do I need to justify M2 only 
-choice?}.\\
+except shoals east of New Zealand \citep{walters2001ocean}.\\
 To investigate variations of baroclinic tide dynamics several ocean states were prescribed and 
-analyzed separately. In the simplest setting, no lateral gradients in water density were given and 
-vertical gradient was representative of Tasman Sea basin climatological mean. The second set of 
-simulations was comprised to investigate interannual and interseasonal variability 
-(Table 1). And the third calculation was intended to provide context for TTIDE field program, so 
-this was done by performing a single experiment once initialized and then let run for three 
+analyzed separately. In the simplest setting lateral gradients in water properties were absent, 
+while buoyancy frequency was set to representative of Tasman Basin. The second set of simulations 
+was comprised to investigate interannual and interseasonal variability (Table 1). And the third 
+calculation was intended to cover period of TTIDE/TBEAM/Tshelf field programs 
+\citep{pinkel2015breaking}, a single experiment once initialized was left to proceed for three 
 numerical months.
 \begin{table}
 	\caption{Carried out numerical experiments}
@@ -125,49 +179,53 @@ numerical months.
 		\hline
 		\multicolumn{3}{|c|}{Numerical experiments used in this study} \\
 		\hline
-		Experiment abbreviation & Dates & Comments (reason?) \\
+		Experiment abbreviation & Simulation period & Comments (reason?) \\
 		\hline
 		Uniform & ~ & No mesoscale \\
 		2012 &   Jan 1st - Jan 15th, 2012 & Interannual \\
 		2013 &   Jan 1st - Jan 15th, 2013 & Interannual \\
 		2014 &   Jan 1st - Jan 15th, 2014 & Interannual \\
-		2015 &   Jan 1st - Jan 15th, 2015 & Interannual \\
-		2013\_274 &   Oct 1st - Oct 15th, 2013 & Interseaonal \\
-		2015\_074 &   Mat 1st - Mar 15th, 2015 & Interseaonal \\
-		2015\_TTIDE &   Jan 1st - Mar 1st, 2015 & Field period \\
+		2013\_Oct &   Oct 1st - Oct 15th, 2013 & Interseaonal \\
+		2015\_Mar &   Mat 1st - Mar 15th, 2015 & Interseaonal \\
+		2015\_TTIDE$^{\ast}$ &   Jan 1st - Mar 1st, 2015 & Field period \\
+		\hline
+		\multicolumn{3}{|l|}{\footnotesize$^{\ast}$ the results are named as respective day of 
+		year over which post-analysis was performed, e.g. $d20-25$ }\\
 		\hline
 	\end{tabular}
 	\label{ch2:table_exp}
 \end{table}
 The simulations with variable conditions were at first initialized by HYCOM hindcasts 
-\footnote{cite?} for respective start date. Then during temporal integration, along with 
-barotropic tidal flow, time-variable, subtidal two dimensional fields \footnote{(vertical 
-coordinate and along boundary coordinate)} of horizontal currents, temperature and salinity were 
-prescribed into the numerical ocean. The air-sea interaction was also given from MERRA-reanalysis 
-\citep{rienecker2011merra} by insolation, air  temperature, EP rates and most imporantly, wind 
-stresses.
+\footnote{(NAVGEM;	downloaded from hycom.org)} for respective start date. Then during integration, 
+along with barotropic tidal flow, time-variable, subtidal two dimensional fields 
+\footnote{(vertical coordinate and along boundary coordinate)} of horizontal currents, temperature 
+and salinity were imposed onto the numerical ocean. The air-sea interaction obtained from 
+MERRA-reanalysis \citep{rienecker2011merra} was also given by insolation, air  temperature, EP 
+rates and most importantly, wind stresses.
 
 \subsection{Internal tide analysis}
-As it is seen in table 1, the simulations were carried for 15 days or longer. The first 10 days 
-were given for spin up of baroclinic tide generation and propagation. Roughly, it takes about 7 
-days for the mode-1 signal to cross Tasman Sea basin from New Zealanda to Tasmania. After that 
-period, three dimensional fields velocity, temperature and salinity were sampled hourly. These were 
-later subject to high pass filtering. Butterworth filter of order $x$ with cut off time of $30$ 
-hours were applied to the records. This produced tidal signal that was further fit in a least 
-square sense to the principle semidiurnal harmonic. Then the three dimensional fields was then 
-underwent a routine separation of barotropic and baroclinic signals \citep{cummins1997simulation, 
-kunze2002internal, carter2008energetics}, depth-averaged current is thought to represent a pure 
+As it is seen in table 1, the simulations were carried out for 15 days or longer. The first 10 days 
+were left for spin up of baroclinic tide generation and propagation. Roughly, it takes about 7 
+days for the mode-1 signal to traverse Tasman Sea from New Zealanda to Tasmania. After that 
+period, three dimensional fields of velocity, temperature and salinity were sampled hourly. These 
+were 
+later subject to high pass filtering with Butterworth filter of order $6$ with cut off time of $36$ 
+hours. This removed subtidal motions and left out signal was further fit in a least 
+square sense to the principle semidiurnal harmonic. Then the three dimensional fields 
+underwent a separation into barotropic and baroclinic signals \citep{cummins1997simulation, 
+kunze2002internal, carter2008energetics}. A depth-averaged current is thought to represent a pure 
 barotropic signal and any vertical deviation is attributed to a baroclinic wave,
 \begin{equation}
 \label{ch2:bt_bc_vel}
 \vec{u}_{bt}(x,y) = \frac{1}{H} \int_{-H}^{0} \vec{u}(x,y,z)  dz,~\vec{u}_{bc}(x,y,z) =  
 \vec{u}(x,y,z) - \vec{u}_{bt}(x,y)
 \end{equation}
-To describe distribution of pressure at first, from a linear equation of state and respective 
-TS-fields density perturbation from the reference is obtained. Then the hydrostatic approximation 
-is employed and after vertical integration the total pressure fields is found. This is then subject 
-to barotropic condition, so that baroclinic field is taken to be as a deviation from the 
-depth-averaged,
+To describe distribution of pressure, at first, from a linear equation of state and respective 
+\textit{TS}-fields density perturbation from the reference is found. Then the hydrostatic 
+approximation is employed and after vertical integration the total pressure field is found. This 
+is then subject to baroclinicity condition, so that baroclinic pressure anomaly is taken to be a 
+deviation 
+from the depth-averaged,
 \begin{equation}
 \label{ch2:bt_bc_pres}
 p(x,y,z) = \int_{-z}^{0} \rho(x,y,z) dz,~p_{bc}(x,y) = p(x,y,z) - \frac{1}{H} \int_{-H(x,y)}^{0} 
@@ -175,37 +233,47 @@ p(x,y,z) = \int_{-z}^{0} \rho(x,y,z) dz,~p_{bc}(x,y) = p(x,y,z) - \frac{1}{H} \i
 \end{equation}
 In the both expressions rigid-lid approximation is used. This is a valid statement unless vertical 
 accelerations are smaller than acceleration due to gravity which is true except shallow depths 
-\cite{kelly2010}.\\
+\citep{kelly2010}.\\
 Each dynamical variable was then decomposed into vertical modes. The structure functions were 
-obtained by using local Brunt-Vaisala frequency profiles found from averaged density fields. These 
-were used in Sturm-Liouville problem for the hydrostatic approximation,
+obtained from local Brunt-Vaisala frequency profiles found from time-averaged density fields. 
+These were used in Sturm-Liouville problem for the hydrostatic approximation,
 \begin{equation}
-\frac{d}{dz}(\frac{\omega^2 - f^2}{N^2} ) \frac{d \psi(z)}{dz}) + c^2_n \psi(z) = 0
+\frac{d}{dz}((\frac{\omega^2 - f^2}{N^2} ) \frac{d \psi(z)}{dz}) + c^2_n \psi(z) = 0
 \end{equation}
-where $c_n$ is a mode respective phase speed in nonrotating ocean. The first 3 vertical modes were 
-fit three-dimensional fields. And only mode-1 was used in the Chapter.\\
-Now energy diagnostics could be obtained. First, depth-averaged mode-1 energy flux will be simply,
+where $c_n$ is the mode phase speed in nonrotating ocean. The first 3 vertical modes were 
+fit into three-dimensional fields. And only mode-1 was used in the following results.\\
+Now energy diagnostics could be obtained. First, depth-averaged mode-1 energy flux is
 \begin{equation}
 \vec{F} = \frac{1}{2} \frac{1}{H} \cj{\vec{u}} p \int_{-H}^{0} \psi_1(z) \psi_1(z) dz
 \end{equation}
 At second, rates of conversion from barotropic to baroclinic \citep{simmons2004internal, 
-kurapov2003m} were calculated as,
+kurapov2003m} were calculated as
 \begin{equation}
-C_{bt\to 1} = -\frac{1}{2}(\cj{\vec{u}_{bt}} \cdot \nabla H) p_{1}
+\label{C3:eq.conv}
+C_{bt\to 1} = -\frac{1}{2}(\cj{\vec{u}_{bt}} \cdot \nabla H) p_{1,~bot}
 \end{equation}
 The fraction $\frac{1}{2}$ in front of the energy characteristics appear because harmonic, complex 
 amplitudes are used in the expressions.\\
-These calculations had produced a set of dynamical variables related to barotropic and baroclinic 
-fields in each experiment (table.\ref{ch2:table_exp}). The obtained values hereafter will be 
-referred as a realization. For instance, the longest experiment, 2015\_TTIDE had 10 realizations 
-which are all dependent since it was the continuous simulation. The latter calculation of 
-stationarity was made by simple expressions,
+These calculations had produced a set of dynamical variables of barotropic and baroclinic 
+fields in each experiment. The obtained values per experimenter hereafter will be referred as a 
+realization. For instance, the longest experiment, 2015\_TTIDE had 10 realizations. To study 
+variability of the system, mean values were defined as arithmetic mean,
+\begin{equation}
+<\bullet> = \frac{1}{N} \sum_i \bullet_i
+\end{equation}
+where $\bullet$ a field being averaged and $N$ is a number of experiments used. The variation 
+between realizations is studied by mean deviation,
+\begin{equation}
+\Delta \bullet = \frac{1}{N} \sum_i (\bullet_i - <\bullet>)
+\end{equation}
 
-\subsection{Discrete Fourier Decomposition by inverse modeling}
+\subsection{Discrete Fourier Decomposition by inverse modeling} \footnote{I will move it to 
+Appendix and will leave just a paragraph or two}
 In addition to the above characteristics the mode-1 internal tide field was subject to directional 
-analysis in order to remove interference modulations by a novel approach. Though similar methods 
+analysis in order to remove interference modulations. Similar methods 
 were used previously in internal tide field programs \citep{hendry1977observations, 
-lozovatsky2003spatial} that were based on array beamforming method and stationarity of the field or 
+lozovatsky2003spatial} \footnote{that were based on array beamforming method and stationarity of 
+the field} or 
 satellite altimetry \citep{dushaw2002mapping} or in surface wave studies 
 \citep{longuet1961observations, munk1963directional, long1986inverse}. Let 
 mode-1 pressure in complicated seas to be described by an angular spectrum
@@ -226,7 +294,7 @@ shows that a field at point $(r, \theta)$ produced by plane wave can be expanded
 Bessel functions and circular functions. Then its substitution into \eqref{C1:eq.spectrum} and 
 reorganization lead to
 \begin{equation}
-\label{C1:eq.series}
+\label{C1:p.eq}
 p(r, \theta) = \sum_{m=-\infty}^{m=\infty} \big[ \int_0^{2\pi}  d\theta_k S(\theta_k) 
 e^{i\phi(\theta_k)} e^{-im\theta_k} \big] i^m J_m(kr) e^{im\theta}
 \end{equation}
@@ -235,7 +303,7 @@ order $m,~A_m - i B_m$. Thence, series \eqref{C1:eq.series} state a model equati
 unknown coefficients from the known, measured pressure field that were sampled at a set of points 
 $(r_i, \theta_i)$ and if infinite series is truncated at some order $N$. Real and imaginary parts 
 will constitute two separate problems allowing deterministic definition of the spectrum.\\
-The same steps are repeated but with current velocities instead. By invoking plane wave  
+The same steps are repeated but with current velocities instead. Plane wave  
 polarization relations \citep[e.g.,][]{muller2000scattering} are inserted into 
 \eqref{C1:eq.spectrum} and the following equations are found,
 \begin{align}
@@ -256,8 +324,8 @@ asymmetry via Coriolis effect. This results points out that to describe velocity
 higher circular harmonics have to be used. Physically, velocity field has higher spatial 
 wavenumber. But in \eqref{C1:uv.eq} additionally, the asymmetry is observed 
 for clockwise and counterclockwise components.\\
-An inverse model combines dynamical relations of \eqref{C1:p.eq} and \eqref{C1:uv.eq} into a matrix 
-equation
+The inverse model combines dynamical relations of \eqref{C1:p.eq} and \eqref{C1:uv.eq} into a 
+matrix equation
 \begin{equation}
 y = K x
 \end{equation}
@@ -270,16 +338,16 @@ J = ||K x - y||^2_2 + \alpha ||x||^2_2
 \end{equation}
 The unknown regularization parameters $\alpha$ acts as a high-pass filter in a singular value 
 decomposition of $K$ \citep{bennett1992inverse}. In field studies this is usually set by a 
-signal-to-noise ratio (\cite{munk2009ocean}), since the parameter scales noise variance (residue) 
+signal-to-noise ratio \citep{munk2009ocean}, since the parameter scales noise variance (residue) 
 to actual signal's strength. To obtain $\alpha$ in data-driven way a straightforward approach is 
 adapted that based on 
-trade-off curve method (\cite{hansen1993use}). In \eqref{C1:Tikh_prob} amount of allowed error 
+trade-off curve method \citep{hansen1993use}. In \eqref{C1:Tikh_prob} amount of allowed error 
 is competing with solution's variance. An optimal parameter should balance these factors. This is 
 seen as a rapid change in behavior of curve associating residue with model's norm as regularization 
-varie. In most cases the curve has a sharp corner connecting aforementioned limits, hence, the 
-method's name is a L-curve (\cite{hansen1999curve}). And the corner is to occur for an optimal 
+varies. In most cases the curve has a sharp corner connecting aforementioned limits, hence, the 
+method's name is a L-curve \citep{hansen1999curve}. And the corner is to occur for an optimal 
 regularization parameter.\\
-The equations \eqref{C1:eq.series} and \eqref{C1:uv.eq} are sampled at locations in a concentric 
+The equations \eqref{C1:p.eq} and \eqref{C1:uv.eq} are sampled at locations in a concentric 
 arrays placed at $\lambda,~0.5\lambda,~0.25\lambda$ where $\lambda$ is a local mode-1 wavelength. 
 At each location $u,~v,~p$ are used as data and for a region embraced by array Fourier coefficients 
 are found. And these then are used in reconstructions.\\
@@ -293,281 +361,664 @@ were approaching one of plane wave technique of \citep{zhao2010long}. Additional
 method can be utilized for a single mooring where half-space separation is necessary.
 
 \section{Results}
-\subsection{Ridge}
-\subsection{Mid-basin beam}
-The mid basin properties of the tidal beam include:
-\begin{itemize}
-	\item wobbling
-	\item slightly increased phase speed
-	\item large deviations of group speed
-	\item wavefronts
-	\item spotty APE and HKE
-\end{itemize}
-\begin{figure}
-	\mfig[0.5]{slide_3.pdf}
-	\mfig[0.5]{slide_4.pdf}
-\end{figure}
-These properties point to use that the beam is a standing wave. But no apparent reflected wave is 
-seen. Generation at Southern Tasman Plateau and Cascade Seamount can not be a source for opposite 
-traveling waves due to their weakness. Additionally, directional spectra or plane wave fit does not 
-show presence of such waves. But here we will show that generation indeed is reponsible for wobbly 
-pattern of the tidal beam and present a method that connects conversion pattern along Macquarie 
-Ridge with mid basin characteristics of the beam.
+\subsection{Generation of internal tidal beam}
+Surface tide arrives to Southern Tasman Sea from North (\fignm{C3.fig:BT}). Its 
+advancement happens in counterclockwise manner with maximum amplitude of sea level located along 
+New Zealand's coast. This is a typical Kelvin wave behavior \citep{walters2001ocean}. Also the 
+barotropic tide produces strong currents in shallow Bass Strait, but relatively weak anywhere else 
+in the basin. The simulated sea surface tidal oscillation closely follows TPXO atlas with gross 
+features well captured. Presence of baroclinic field manifests in perturbation of sea level 
+magnitude and cotidal lines. In the basin this have a striking wavy character. This corresponds to 
+propagation of low mode tidal wave (\fignm{C3.fig:beam}).\\
+The baroclinic tidal field represents a complex pattern produced by multiple generation sites 
+defined by steep topography. Primary production sites are just south of New Zealand. Here 
+barotropic Kelvin wave faces prominent Macquarie Ridge stretched for 2000 km. As barotropic current 
+decays away from the coastline conversion lessens as well. Nevertheless, low-mode beams are emitted 
+from many locations. Major conversion happens at $49.5^{\circ}$ shedding away the strongest beam. 
+This and two nearby beams were identified in altimetric observations \citep{zhao2018satellite}. 
+Henceforth, analysis is concentrated on the most energetic, central beam.\\
+The central beam is produced by tidal currents impinging on supercritical bathymetry 
+(\fignm{C3.fig:gen}). Depth of the highest conversion is between 1000-3000 m and spatially confined 
+to two seamounts that are separated with a sill. It has less inclined slopes and plays 
+lesser role in production of the tidal beam. On average, this region of Macquarie Ridge converts 
+1.6 GW of surface tide. This is half of production of Kaena Ridge, Hawaii 
+\citep{carter2008energetics} and much less than Luzon Strait \citep{}. Pattern of conversion 
+(\fignm{C3.fig:gen}) also exhibits regions of internal tide destruction produced by complex 
+dynamics caused by superposition. In fact, an oppositely located Aucklands Escarpment presents an 
+important 
+source of 
+baroclinic energy. \fignm{C3.fig:beam} clearly illustrates existence of a standing wave in 
+Solanders Trough. The total field is characterized 
+by a node in horizontal kinetic energy with fluxes revolving in counterclockwise direction 
+\fignm{C3.fig:stand_wave} because of Southern Hemisphere. By the method proposed in 
+ref-to methods, the standing wave is separated into elemental east-west directed components 
+(\fignm{C3.fig:stand_wave}). On leeward side of Macquarie Ridge generation occurs at the same 
+seamounts but there is a region of destruction that coincides with incidence of waves emitted by 
+the escarpment. There generation has reacher structure both due to more complicated 
+topography that is crisscrossed by canyons but also because of Macquarie ridge produced waves. 
+Quantifying energy transfer across the trough and comparing with spatially integrated conversion 
+rates points out to fact that wave energy is being recirculated by slope's supercritical 
+reflection and only partly fed by barotropic field. In overall, such system is similar to Luzon 
+strait where resonance conditions exist between two parallel ridges \citep{buijsman2014three}. In 
+case of Macquarie Ridge and Campbell Plateau resonance is only partial since the former has a slant 
+orientation of $15^{\circ}$. Though at $49.5^{\circ}$ the distance corresponds to 3/4 of mode-1 
+wavelength. Such spacing is sensible to phase lags and can either lead to intensification or 
+destruction of generation. This is illustrated by comparison of two simulations that presents 
+dynamically different regimes of generation.\\
+%While \eqref{C3:eq.conv} provides a convenient way to quantify energy transformation, it does 
+%not have much room for physical interpretation. Such as in complicated situation when along with 
+%local baroclinic tide production a remote signal is present, resultant perturbation of bottom 
+%pressure might lead to rather ambiguous result of internal tide destruction. It is said that such 
+%regime is to occur when a phase difference between $w_{bt}$ and $p_{1}$ is in range of 
+%$(\pi/2,~3\pi/2)$. This is understood as an internal tide performing work against barotropic 
+%forcing. Unfortunately, this statement does not directly follow from \eqref{C3:eq.conv}. Hence, to 
+%provide cleaner physical picture, let derive expression for conversion rate from the first 
+%principles. Body force of \citep{baines1982} is performing work by displacing isopycnal surfaces 
+%throughout a water column,
+%\begin{equation}
+%\label{C3:eq.convd1}
+%C(z) = \frac{dW(z)}{dt} = F_{B} w_{bc} = \frac{N^2 (-\vec{u} \cdot \nabla h) z}{i \omega h} 
+%\frac{d 
+%\xi}{dt} = \frac{w_{bt}}{i \omega h} \frac{z d(-b)}{dt} = -\frac{1}{h} w_{bt} zb
+%\end{equation}
+%where isopycnal displacements $\xi$ were changed to buoyancy, $b = -N^2 \xi$ and temporal 
+%variation 
+%was assumed to be harmonic, $\sim e^{i \omega t}$. On a final step, integration by parts can be 
+%employed as,
+%\begin{equation}
+%\label{C3:eq.convd2}
+%\int_{-h}^{0} z b dz = \int_{-h}^{0} z d \big( \int^0_{z} b dz \big) = \big( z \int^0_{z} b dz 
+%\big)\big|_{-h}^0 - \int_{-h}^{0} dz \int_{z}^{0} b dz^{\prime} = h (\int_{-h}^{0}b dz - 
+%\frac{1}{h} \int_{-h}^{0} dz \int_{z}^{0} b dz^{\prime})
+%\end{equation}
+%The last expression is a bottom pressure perturbation. Noteworthy, a baroclinicity condition was 
+%not employed. Combining \eqref{C3:eq.convd1} and \eqref{C3:eq.convd2}, familiar result 
+%for conversion rate is obtained. Note that a similar approach to \eqref{C3:eq.convd1} was used 
+%by \citep{nash2006structure} to estimate an upper limit on emitted energy.\\
+Conversion rate shows how much work was done by baroptropic tide to displace isopycnal interfaces. 
+This is understood as work against buoyant forces. But it can happen that barotropic forcing will 
+be oppositely directed if somewhere in the water column other forces are present. For case of 
+'2014' 
+simulation (\fignm{C3.fig:gen_2d}, a-b) during ebb tide on tideward side there is net energy 
+conversion to baroclinic field even that along bottom an internal wave ray is developing by upward 
+displaced interfaces as a result of previous tidal phase. Hence, at these location a newly 
+generated internal wave does work against downward barotropic flow. And this produces negative 
+conversion (\fignm{C3.fig:gen_2d}, e) at some moment. As tide turns conversion changes sign 
+again. Overall, period averaged transfer is positive, i.e. surface tide losses energy. In 
+the other experiment presented (d10-15, \fignm{C3.fig:gen_2d}, c-d), there is an intensification 
+due 
+to advancement of a mode-1 wave. In actuality, its propagation from Solanders Trough 
+($165^{\circ}$) 
+and over the sill is the major difference between two simulations. So in '2015'-setting similar 
+along slope advancement of an internal wave ray is observed, but now due to shoaling mode-1 
+conversion is positive throughout tidal cycle.\\
+The contrary situation is found on leeward side ($164.5^{\circ}$) where surface tide current has the
+opposite direction. For '2015' it appears that propagating mode-1 is losing energy since it does 
+work against barotropical forcing by dipping isopycnals. Though in transition some energy is lost 
+from surface tide. In '2014' there is a reflection of an internal wave ray as phase is advancing 
+onto the sill. This coincides with upward barotropic flow that in total leads to intensification. 
+In total, period averaged conversions have different signs on leeward side. Comparison of mode-1 
+wave 
+position in the trough at ebb tide (\fignm{C3.fig:gen_2d}, a,c) suggests difference in timing of 
+the 
+remote wave arrival or its advancement. This is explored on (\fignm{C3.fig:gen_2d}, g). The total 
+signal shows a region of low phase change eastward of $165^{\circ}$ that corresponds to 
+concentration of kinetic energy (\fignm{C.3:stand_wave}, a). Decomposition of the signal presents 
+it roughly as a sum of the ridge generated waves (eastward propagation) and the escarpment 
+originated (westward) waves. The actual relation will depend on relative magnitudes 
+\citep{martini2007diagnosing}. 
+But westward of $165^{\circ}$ there is almost a free propagation in '2015' of the ``escarpment" 
+waves as the total signal closely corresponds to them. But in '2014' due to sills generation and  
+strong reflection, phase difference with local baroptropic tide falls below 
+$90^{\circ}$, so that there is an intensification of generation.\\
+The described situation provides a several approaches to narrate variability in conversion rates. 
+At first, it is clear that amount of remote energy crossing Macquarie Ridge through the sill will 
+shape the overall conversion. Hence, energy incident from leeward side can provide such 
+estimate. It is quantified from the numerical simulations by line-integration of energy fluxes 
+through leeward side (\fignm{C3.fig:gen}). Additionally, this amount is modulated by reflection of 
+the 
+sill. Here it is thought as a knife-edge barrier for which reflectivity was analytically found by  
+\citep{larsen1969internal} with similar investigations of \citep{klymak2013parameterizing}.  
+Sill's depth is obtained as a depth jump from the trough to the sill that were WKB-scaled. The 
+resultant calculation is given by (\fignm{C3.fig:gen_regr}, a) where total conversion of tideward 
+side 
+of Macquarie Ridge is plotted against amount of transmitted mode-1 energy. At second, efficiency 
+of generation will depend on phase difference between the remote waves and local forcing. This is 
+estimated from mode-1 eigenspeed for Solanders Trough. Taken distance separating Macquarie Ridge 
+and Aucklands Escarpment to be about $115~km$ (average mode-1 wavelength $155~km$), the time to 
+cross the trough can be found (\fignm{C3.fig:gen_regr}, b). And additional factor is environmental 
+changes that are associated with overall efficiency of generation by the ridge. Again by applying 
+WKB-scaling variation of ridge's depth relative to the surrounding deep ocean is found and then 
+scaled to converted energy by application of theory by \citep{st2003generation}. The 
+mean barotropic current of $0.03~m/s$ generation was considered to produce 
+(\fignm{C3.fig:gen_regr}, 
+c).\\
+The linear regression for the first parameters has correlation coefficient $R^2$ slightly higher 
+than 0.5, and for linear multiple variable regression it increases to $0.7$. The least dependence 
+is found for stratification variability on the tideward side. Though if all three parameters 
+combined $R^2$ becomes $80\%$. Hence, most variability is associated with leeward dynamics and not 
+local stratification. Additionally, all three environmental parameters do not always change in 
+similar fashion suggestive for different mesoscale dynamics occurring in the deep sea, over 
+Macquarie Ridge and in Solanders Trough. This is not surprising since the region is affected by 
+frontal zone and reach in subtidal dynamics \citep{smith2013interaction}. Further, inclusion of 
+transmission coefficient increases correlation, but most variability comes from amount of energy 
+traveling from Aucklands Escarpment 
+(\fignm{C3.fig:stand_wave}, c). This is much harder problem to estimate since generation in that 
+region has much more spotty character (\fignm{C3.fig:gen}) because of complex topography and large 
+influence of eastward traveling waves which can also act either to intensify local generation or 
+destroy baroclinic tides.
+%So in total, generation at Macquarie Ridge is occurring in 
+%complex dynamical environment that largely modulated by ocean conditions. 
 
 
-Study the wavefield varies depending on size of the ridge.
-\begin{figure}
-	\mfig[0.5]{res_test.png}
-	\caption{Comparison of inverse solution and numerically diagnosed.}
-\end{figure}
-\subsection{Analytical results}
-
-\section{Discussion}
-\subsection{Generation}
-Uniform: Three beams similar to satelite. Central primarily originates in main Macquarie Ridge. 
-There is large  variability in the northern, southern, but central is stable.\\
-There two major generation hotspots associated with steep submarine seamounts (Figure 1).\\
-\begin{figure}
-	\mfig[0.5]{uni_flux.png}
-	\mfig[0.5]{Clin_Mac.png}
-	\caption{Energy flux map of the beam in Tasman Sea (a) and conversion rates at Macquarie Ridge 
-	(b).}
-\end{figure}
-The other region of generation is behind located Campbell Plateau.\\
-Additionally, there is a standing wave.
-\begin{figure}
-	\mfig[0.5]{stand_wave_2by2.png}
-	\caption{Standing wave}
-\end{figure}
-Now we investigate interaction between conversion and standing wave.\\
-Spatial maps of conversion rates show variation in magnitude and location of conversion hotspots 
-(Fig. 1). The energy transfers predominantly occur along steep flunks of two seamountains. The most 
-striking difference was found between '2014' and 'uniform' experiment.\\
-
-Conversion rates vary between experiments. Knife edge calculations with WKB-scaled depth does not 
-confirm the same variations (Figure 2).\\
-The other possibility for variations can be seen due to presence of remote waves.
-Model conversion rates and knife edge, Enhancement of generation due to remote propagating tides.\\
-\begin{figure}
-	\mfig[0.5]{knife_edge.png}
-	\caption{Variation of integrated conversion rates and knife edge}
-\end{figure}
-
-\begin{figure}
-	\mfig[0.25]{cmp_14_15_params_MR1_flood_tf.png}
-	\mfig[0.25]{cmp_14_15_params_MR1_max_tf.png}
-	\mfig[0.5]{years_clins.png}
-	\caption{Model output}
-\end{figure}
-
-So variations in standing wave leads to variations in conversion.\\
-
-\subsection{Variation of standing wave, HYCOM}
-We represent standing wave as interference of  two waves (\cite{martini2007diagnosing}),
-....\\
-\begin{figure}
-	\mfig[0.5]{1.pdf}
-\end{figure}
-
-\begin{figure}
-	\mfig[0.5]{HKE_44.png}
-\end{figure}
-Discussion on variability of standing wave: stratification?\\
-It was tested hypothesis that the stratification controls, but results are inconclusive.\\
-
-\section{Discussion: Field observations and Boundary condition for scattering}
-
-\section{Conclusions}
+%Generation of baroclinic tide primarily happnes south of New Zealand. 
+%in circular fashion 
+%Southern Tasman Sea represents a case of complicated of 
+%internal tidal field. Even baroptropic 
+%currents are 
+%small and topography is not steep, there are a lot of regions surrounding the Southern Tasman sea 
+%to produce internal tides (Figure 1). To name a few Southern Tasman Rise, Lord Howe Rise, Bass 
+%Strait. Though the primary production site is found at Macquarie Ridge that stretches poleward 
+%from 
+%New Zealand for almost 2000 km. There several internal tidal beams are emitted along different 
+%sections. These were previously identified in satelite altimetry \citep{zhao2016global}. The major 
+%beam is produced where most of energy transfer from baroptropic tide to baroclinic field happens 
+%at 
+%$45^\circ$S.\\
+%The steep topography and strong semidiurnal currents produce convergence of barotropic flow. This 
+%primarily occurs at two seamounts and along 3000 m isobath. Here the topography is super critical 
+%internal waves to be radiated in the low mode signal. The other generation is located by sill 
+%connecting two seamounts. This pattern and its spatial distribution is subject to variability. As 
+%it is observed there could occur a shift in position.\\
+%As it is seen on Figure 1 this region has a complex internal wave field. The changes in generation 
+%attributed to interaction of remote tidal waves and locally generated. This is illustrated by two 
+%opposite experiments, 2014 and 2015. It is quite obvious to see marked difference in Solander 
+%trough. On tidal flood stage barotropic tide is climbing up flanks of Macquarie Ridge causing 
+%development of vertical velocity. At the same time, in 2015 there is a propagation of mode-1 
+%internal wave which then slams generation. On the opposite, generation at 2014 shows beam pattern, 
+%so there is a direct generation of internal wave. This is then emphasized by period-averaged 
+%conversion. It shows different signs of conversion.\\
+%To study these difference we perform directional decomposition (Figure). The total field is 
+%comprised of two waves oppositely directed: one generated on lee side of Macquarie Ridge and the 
+%other at Aucklands Escarpment they result in a superposed field. Rather than employing mechanism 
+%of 
+%resonance it is more apparent that the total field and consequent energy transfer happens 
+%depending 
+%on amplitudes of the mentioned waves and due to different slanting angles. In the simplest case of 
+%equal ratio there is no energy transport and portion of it is directed towards.\\
 
 \newpage
-\iftoggle{only_Chapter} {
-	\appendix
-}
+\subsection{Characteristics of Tasman tidal beam}
+Widespread energy conversion at Macquarie Ridge produce a clearly defined internal tidal beam 
+(\fignm{C3.fig:beam}). To delineate spatial variability of energy characteristics, their cross-beam 
+averages are introduced (\fignm{C3.fig:beam}); and to investigate respective temporal 
+variations, ensemble-means and standard deviations are reported. It is worth noting that while 
+ensemble-mean allows a straightforward interpretation of mode-1 dynamics, it will incorporate a
+portion of variable (non-stationary) signal since any energy characteristic is a nonlinear quantity 
+\citep{zaron2014time}. On contrary, for instance, a flux found from ensemble-mean pressure and 
+currents will exclusively provide a stationary part. Yet if a mode-decomposed signal is considered, 
+finding the means will entail averaging of vertical basis functions. As a consequence, their 
+orthogonality will not be preserved leading to ambiguity in dynamics. Henceforth, an ordinary mean 
+over realizations of beam's energetics is considered. Performed comparison (not shown) between an 
+ensemble-mean of flux and a flux of ensemble-mean did not reveal significant differences in spatial 
+structure, though magnitude of latter was roughly half smaller.\\
+The spatial-temporal changes are provided by \fignm{C3.fig:beam_prms}. Dashed lines mark 
+second-order polynomial fits \citep{zhao2018satellite} used to remove along-beam oscillations.
+On average, the central beam leaves Macquarie Ridge carrying away 1.6 GW in mainly western 
+direction (\fignm{C3.fig:beam_prms}, (a, b)). In the open ocean, over $\sim100~km$ there is a rapid 
+directional turn, but as the beam progresses, rate of change decreases. The latter regime is an 
+example of refraction \citep{cummins2001north, rainville2006propagation, zhao2018satellite} due to 
+a meridional change of Coriolis parameter and consequently, a phase speed. Same phenomena is also 
+seen in ratio of HKE to APE (\fignm{C3.fig:beam_prms}, (c)). By Tasmania the beam is 
+oriented in northwestern direction ($150^\circ$ from East) and has more available potential 
+energy (APE) at the expense of horizontal kinetic form (HKE). Additional feature is an energy decay 
+(\fignm{C3.fig:beam_prms}, (b)) that is caused by geometrical effects and by dynamical processes 
+such as friction and high mode scattering. Amount of deposited energy was determined by flux 
+divergence and on average comprised $35~\%$ so that the beam brings $1~GW$ of baroclinic energy to 
+Tasmania.\\
+According to the numerical experiments there is a high degree of spatial variability 
+(\fignm{C3.fig:beam_prms}). Flux vectors sinuously deviate from the fit by $\pm 30^\circ$. The 
+alterations align with growth or decline in the flux magnitude. While the energy partitioning 
+reversely follows this arrangement. These aspects of propagation are indicative of interference 
+\citep{martini2007diagnosing, zhao2010long} between the internal tidal beam and remote waves. 
+\fignm{C3.fig:beam_dcmp} attest presence of multi-directional wave field. Its components were 
+extracted by the same method of directional spectra (Appendix A) that was then integrated over 4 
+circular quadrants. Then for each an ensemble-mean was obtained. The northwesterly traveling waves 
+highlight a plane-wave propagation of the internal tidal beam. This component will be 
+referred as a planar beam. Its total energy is partitioned closely following a theoretical 
+prediction. However, contrary to expected equatorward increase of potential energy, there is a 
+decay that pertains to frictional losses. \footnote{Minor oscillations are artifacts of analysis 
+owing to finite size of fitting windows. } Southwesterly waves (\fignm{C3.fig:beam_dcmp}, (b)) 
+originate from Lord Howe Rise and Gilbert Seamount. Both are oriented against the surface tide 
+current (\fignm{C3:fig:geo.map}) and hence, efficiently scatter the barotropic energy (e.g., 
+\fignm{C3.fig:beam}). Macquarie Ridge also emits waves traveling in this quadrant. As these signals 
+interfere with the planar beam,  the aforementioned rapid directional turn close to the ridge can 
+now be easily understood. Further, APE becomes only slightly perturbed, but the ratio clearly 
+demonstrates $\sim 200~km$ modulations. Overall pattern is further complicated with an addition of 
+southeasterly signals. This introduces another spatial frequency of $\sim 150~km$ that is affirmed 
+by spatial variation in the potential energy. This irregularity is limited to region $\sim500~km$ 
+from Cascade Seamount. Because this topographic feature reflects portion of the internal tidal beam 
+and cause existence of SW waves. Note their tenfold weakness to the planar beam. On the 
+last panel additional source of baroclinic tides is discovered at South Tasman Rise. Obviously, 
+presence of the multiple generation sites leads to existence of ``internal tidal swell" 
+\citep{hendry1977observations} which is not strong, but yet obscures the beam propagation.\\
+The interference will inevitably produce signature in the temporal variability 
+(\fignm{C3.fig:beam_prms}, purple lines and thin gray lines). Large changes in energy 
+partitioning is collocated with locations of nodes-antinodes. The flux heading has similar 
+pattern, but degree of variability rises as the tidal beam crosses Tasman Basin. Oppositely, the 
+integrated flux alters less between the simulations and any differences are uniformly distributed 
+through the course of propagation. These observations are detailed by \fignm{C3.fig:beam_dcmp_cm} 
+where previous reconstructions are given with addition of temporal variability informed 
+by along-beam distribution of standard deviations and energy flux variance ellipses. The planar 
+beam has mainly magnitude variation that is associated with different conversion levels 
+at Macquarie Ridge. With distance deviations become apparent in energy flux orientation, so that 
+variability ellipses are becoming slanted to the mean vectors. A striking feature is in uniformity 
+of the ellipse distribution and mean vector orientation. This behavior alludes to changes in 
+generation as a cause. Further, inclusion of the swell produces nodes-antinodes so that now energy 
+density variability concentrates near these locations. Contrary, regardless of spatial modulation 
+in the mean flux vector heading, its variability preserves uniformity. But this characteristic 
+is smeared by the reflected, southeasterly waves. Superposition leads to strong modulations 
+in the deviations. Notably, the magnitude variability is not affected on average. Overall, 
+the total field demonstrates high degree of spatial-temporal alterations. Nevertheless, temporal 
+changes accord with the planar beam behavior and all further complexity arises due to multiple-wave 
+interference.
 
-\nottoggle{only_Chapter} {
-	\addcontentsline{toc}{section}{Appendices}
-}
+\section{Discussion}
+The spatial-temporal characteristics present a complication for direct interpretation of 
+diagnosed energy quantities in describing the tidal beam. Its properties are obscured due to 
+interference and hence, needs additional inferences. This is related to variability. It is unclear 
+what can produce beam's energy levels and its orientation/position. Two reasons could be named as 
+accumulating interaction with mesoscale field and generation producing.\\
+Now comparison of the decomposed planar beam can be made 
+with factual observations made by \citep{waterhouse2018observations, zhao2018satellite}. \\
 
-\section*{Appendices}
+\begin{table}
+	\caption{Internal tidal energy flux properties in the far field}
+	\begin{tabular}{ |p{7cm}||p{4cm}|p{4cm}|  }
+		\hline
+		Source & Flux magnitude [$kW/m$] & Heading [$^\circ$] \\
+		\hline
+		This study - all experiments & ~ & No mesoscale \\
+		This study - only field period & ~ & No mesoscale \\
+		Altimetry observations \citep{zhao2018satellite} & $3.9 \pm 2.2$ & $141 \pm 2$ \\
+		Field observations \citep{waterhouse2018observations} &   $3.4 \pm 1.4$ & $149 \pm 3$ \\
+		\hline
+	\end{tabular}
+	\label{ch2:table_exp}
+\end{table}
+\section{Conclusions}
 
-\renewcommand{\thesubsection}{\Alph{subsection}}
-\setcounter{subsection}{0}
-\subsection{Analytical model for knife edge}
-Let consider a simplified problem of the internal tide generation at a three dimensional ridge. That is generating topography has extent in along x-axis, $a$, but infinitely small width. We will not pursue full solution of the problem and will not seek actual amplitudes of baroclinic modes, but rather concentrate on defining spatial pattern of the generated waves (might move up to opening). Under such problem statement the actual height is of no importance. And hence, in frame reference traveling with barotropic current, the topography becomes a piston-alike wavemaker that sends out the lowest mode internal tide. Its behavior in flat bottom ocean is well represented by Laplace tidal equations (cf \cite{kelly2012cascade}):
-\begin{align}
-\vec{u}_t + 2 \Omega \vec{k} \times \vec{u} = - \frac{1}{\rho_0} \nabla \cdot p\\
-\nabla \cdot \vec{u} = -(\frac{1}{N^2 - \omega^2}p_z)_{tz}
-\end{align}
-with boundary conditions on the ridge,
-\begin{equation}
-\vec{u}\cdot \vec{n}|_{ridge} = \vec{u}_{bt} \cdot \vec{n} |_{ridge}
-\end{equation}
-And boundary condition in the infinity implying outgoing waves. Note that barotropic current, in general, is given as a current ellipse written in complex form as $\vec{u}_{bt} = u_{bt} + i v_{bt}$. This means that the boundary condition does not have a simple harmonic form. But the barotropic current can be decomposed to clockwise (CW) and counterclockwise components,
-\begin{equation}
-\vec{u}_{bt} = W_{CW} e^{-(i \omega t - \phi_{CW})} + W_{CCW} e^{(i \omega t + \phi_{CCW})}
-\end{equation}
-and the generation of internal tide can be solved separately for two oppositely rotating currents. In further discussion the only one component (CCW) is taken care of since a solution will have similar form with differences arising in sign in front of tidal frequency.\\
-Considering rigid lid approximation and impermeable bottom equations for eigen modes is solved such that wavelength of corresponding mode is introduced. Than the dynamical equations can be reformulated as Helmholtz equation with harmonic temporal dependence implied and appropriate polarization relations,
-\begin{align}
-\nabla^2 p + k_n^2 p = 0\\
-u = \frac{-i \omega p_x + f p_y}{\omega^2 - f^2},~v = \frac{-i \omega p_y - f p_x}{\omega^2 - f^2}
-\end{align}
-Since the problem is now formulated in terms of pressure only, boundary condition takes the following form (\cite{greenspan1968theory}),
-\begin{equation}
-\Big[ \frac{-i \omega p_y - f p_x}{\omega^2 - f^2} \Big]_{ridge} = \vec{u}_{BT}|_{ridge}
-\end{equation}
-The above equations (5-8) state generation of internal tides by vibrating strip of width $a$. Such problem was solved for radiation of acoustic waves by \cite{morse1946methods}. Since in Cartesian coordinates the strip boundary condition does not allow separation of variables, one can employ elliptic coordinate system,
-\begin{equation*}
-x = \frac{a}{2} \cosh \mu \cos \theta,~y = \frac{a}{2} \sinh \mu \sin \theta
-\end{equation*}
-where edges of the strip will be focii of ellipse, boundary condition will take simpler form,
-\begin{align}
-\Big[ \frac{-i \omega p_{\mu} + f p_{\theta}}{\omega^2 - f^2} \Big]_{\mu = 0} = \frac{a}{2} \sin \theta (\vec{u}_{BT}|_{\mu = 0})
-\end{align}
-The factor $\frac{a}{2} \sin \theta$ arises via conversion from Cartesian to elliptical derivatives. Note change of sign for $p_{theta}$ because opposite growth of $\theta$ argument to $x$ argument. Laplace operator in the elliptical coordinates has eigensolutions (''sloshing modes") in form of Mathieu functions (\cite{stratton2007electromagnetic}) that solution for the emitted waves will have form of,
-\begin{equation}
-p \sim \sum_{j} [Se_j, So_j](h, \theta) [Je_j, Jo_j, Ye_j, Yo_j](h, \mu)
-\end{equation}
-with $Se_j,~So_j$ - angular Mathieu functions of order $j$ corresponding to $\cos$ and $\sin$, $Je_j,~Jo_j$ and $Ye_j,~Yo_j$ - radial Mathieu functions of the first and second kind of order $j$ corresponding to Bessel functions. The physical parameter that sets Mathieu functions behavior is $h = {a k_n}{4} $ so that in large distance limit, $h \mu \gg 1,~rk_n \gg a$, they will represent circular harmonics.\\
-Now RHS of boundary condition (9) can be expressed in series of Mathieu functions,
-\begin{equation}
-\sin \theta = \sum_{j = 0}^{\infty} C_{2j + 1} So_{2j + 1} (\theta)
-\end{equation}
-with coefficients $C_{2j + 1}$ defined by normalization constants $N_{2j + 1} = \int_{0}^{2\pi} So_{2j + 1}^2(\theta) d \theta$ and the first Fourier coefficient of $So_{2j + 1}$. The above series for $\sin$ and form of the boundary condition suggest solution in the form,
-\begin{equation}
-p(\mu, \theta) = \sum_{j = 0}^{\infty} \big( A_{2j+1} So_{2j + 1}(\theta) + B_{2j+1} Se_{2j + 1}(\theta) \big) Ho^{1}_{2j + 1}(\mu)
-\end{equation}
-Here $Ho^{1}_{2j + 1}(\mu) = Jo_{2j + 1} + i Yo_{2j + 1}$ is a Hankel-Mathieu function. For CCW component to ensure condition for outgoing radiation, the sign should be different, so $Ho^{2}_{2j + 1}(\mu) = Jo_{2j + 1} - i Yo_{2j + 1}$.\\
-Now substituting (11, 12) into (9) the unknown coefficients $A,~B$ are obtained,
-\begin{align*}
-(-i\omega (\sum A So + B Se) Ho^{\prime} + f (\sum A So^{\prime} + B Se^{\prime}) Ho) = \sum (\omega^2 - f^2) C So
-\end{align*}
-At first, multiplying above equation by $So_{2m + 1}$ and taking integral from 0 to $2 \pi$, so that $\int_{0}^{2\pi} So_{2m + 1} Se_{2j + 1} d \theta = \int_0^{2 \pi} So_{2j + 1}^{\prime} So_{2m + 1} d \theta = 0,~\int_0^{2 \pi} So_{2m + 1} So_{2m+1} d \theta = No_{2m + 1},~\int_0^{2 \pi} So_{2m + 1} Se_{2j + 1}^{\prime} d \theta = -{N^{\prime}}^{2m+1}_{2j + 1}$. In the last statement orthogonality between $So$ and $Se^{\prime}$ is not satisfied. Equation on each order is obtained
-\begin{align}
-(-i \omega A_{2m + 1} No_{2m + 1}^o Ho_{2m + 1}^{\prime} + f \sum_{j} B_{2j + 1} {Neo^{\prime}}^{2m + 1}_{2j + 1} Ho_{2j + 1}) = C No_{2m + 1}
-\end{align}
-And at second, carrying out the same procedure but with $Se_{2j + 1}$,
-\begin{align}
-(-i \omega B_{2m + 1} Ne_{2m + 1} Ho_{2m + 1}^{\prime} + f \sum_j A_{2j + 1} {Noe^{\prime}}^{2m + 1}_{2j + 1} Ho_{2j + 1}) = 0
-\end{align}
-Note that $\int_0^{2\pi} Se^{\prime}_{2j + 1} So_{2m + 1} d \theta = -\int_0^{2\pi} So^{\prime}_{2j + 1} Se_{2m + 1} d \theta$, i.e. ${Noe^{\prime}}^{2m + 1}_{2j + 1} = -({Neo^{\prime}}^{2m + 1}_{2j + 1})^T$.\\
-Equations (13) and (14) form a linear system to find coefficients for different component of the total field. These equations are solved numerically with $j_{max} = 5$ due to rapid convergence of the involved series.
+%\newpage
+%\iftoggle{only_Chapter} {
+%	\appendix
+%}
+%
+%\nottoggle{only_Chapter} {
+%	\addcontentsline{toc}{section}{Appendices}
+%}
+%
+%\section*{Appendices}
 
-\subsection{Inverse model}
-The model closely follows ideas used in ref-to-Luc, 2010 and -Jody-2016. The internal tide generating ridge is given by point sources each emitting following
-\begin{equation} \label{invm_eq:1}
-p = p_{0} \frac{2}{\pi k d} \cdot e^{i  k  d}
-\end{equation}
-where $k$ - wavenumber associated with eigen mode-1, i.e. $k = \sqrt{\omega ^ 2 - f ^ 2}{c_{eigen} ^ 2}$, $d$ - distance between a point source and an observation point. By observation points here and after is meant points in which observations are inverted. The given solution is a solution of pressure distrubance propagation for two dimensional wave equation (p. 22, Frisk) and describes outgoing cylindrical wave. This is a far field approximation ($kd \ll 1$), in the near source zone the solution is substituded by Hankel functions. Here representation is simplified and observation points on the distance less than wavelength are omitted. Though introduction of Hankel function into the inverse model does not involve any additional complexity. By pressure here is thought mode-1 pressure amplitude that can be connected to sea level disturbance or isopycnal displacements.\\
-To describe energy fluxes in the observational points polarization relations for cylindrical Poincare wave are invoked,
-\begin{align} \label{invm_eq:2}
-u = \frac{p_{0}}{\rho_{const}} * \frac{-i \omega \cos(\theta) + f \sin(\theta)}{\omega ^ 2 - f ^ 2} \cdot p_{\vec{d}}\\
-v = \frac{p_{0}}{\rho_{const}} * \frac{-i \omega \sin(\theta) - f \cos(\theta)}{\omega ^ 2 - f ^ 2} \cdot p_{\vec{d}}
-\end{align}
-where $p_{\vec{d}}$ is a derivative along radius-vector $\vec{d}$,
-\begin{equation}
-p_{\vec{d}} = (i \cdot k - \frac{1}{2 d}) p
-\end{equation}
-In further description of the inverse model it is used following notation, indices $i,~k$ define $i,~k$-th point sources, while $j$ - $j$-th observation point.\\
-The tidally and depth averaged energy fluxes will be given as an interference of pointwise fields from all sources,
-\begin{align}
-F_{j}^x = \frac{1}{2} \sum_k u_{kj}^{\star} \sum_i p_{ij} \int_H^0 \psi_1(z)^2 dz\\
-F_{j}^y = \frac{1}{2} \sum_k v_{kj}^{\star} \sum_i p_{ij} \int_H^0 \psi_1(z)^2 dz
-\end{align}
-Note different indexes for u/v and p meaning that cross multiplication is involved which leads to complex interference pattern. In energy flux formulation normalization coefficient associated with eigenmode structure function are introduced by corresponding mode-1 structure function, $\psi_1(z)$. Coefficient $1/2$ is used for convenience to convert actual time averaging involved to multiplication of complex numbers. In further description the constant coefficients are omitted due to their irreleveance. The previous relations can be expressed in matrix form (it is not fully correct for fluxes, multiplication is done term by term per point),
-\begin{align}
-p_j = B^p_{ji}{p_i},~u_j = B^u_{ji}{p_i},~v_j = B^v_{ji}{p_i}\\
-F^x_j = (B^u_{jk}{p_k})^{\star} B^p_{ji}{p_i},~F^y_j = (B^v_{jk}{p_k})^{\star} B^p_{ji}{p_i} \label{invm_eq:4}
-\end{align}
-where tensor notation is used, i.e. summation is done over same indices. Matrices $B^p_{ij},~B^u_{ij},~B^v_{ij}$ are short notation for generaion model and polarization relations, for example,
-\begin{equation}
-B^p_{ji} = p_i \frac{2}{\pi k d_j} \cdot e^{i  k  d_j}
-\end{equation}
-These can be thought as disretization of operators transforming distribution of sources into interference pattern in pressure and velocity fields.\\
-Apparently, the energy flux relations are non-linear. To deal with this it is proposed an iterative technique. Let at $m$-th iteration there is a known distribution of wave amplitude at sources, $p^m_i$, the total energy flux field can be reconstruced by (\ref{invm_eq:4}). Than it is desired to find a small adjustment $\delta p^m_i$ (``nudge factor") such that residual between observed field and analytical description will be decreased. One can write,
-\begin{align}
-F_{j}^x = (B^u_{jk}(p^m_k + \delta p^m_k))^{\star} B^p_{ji}(p^m_i + \delta p^m_i) = \nonumber\\
-(B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} p^m_i + (B^u_{jk} p^m_k)^{\star} B^p_{ji} \delta p^m_i + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} \delta p^m_i\nonumber\\
-F_{j}^x - (B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} = (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} p^m_i + (B^u_{jk} p^m_k)^{\star} B^p_{ji} \delta p^m_i + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} \delta p^m_i \label{invm_eq:3}
-\end{align}
-The left hand side of (\ref{invm_eq:3}) represents the residual, the right hand side sets a controlling equation to obtain adjustment neceassary to decrease the residual. The last term of RHS shows a non-linear nature of the problem. This is omitted since the purpose of conseqeunt iterative technique is to find the final source distribution such that the model equations (\ref{invm_eq:4}) are satisfied in least square sense. Than the ``nudge-factor" can be found as inverse of 
-\begin{equation}
-F_{j}^x - (B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} = R_j^x = \Big[ (B^u_{jk} )^{\star} B^p_{ji} p^m_i + (B^u_{jk} p^m_k)^{\star} B^p_{ji} \Big] \delta p^m_i \label{invm_eq:5}
-\end{equation}
-(these equations are not in matrix form, but obsevation point by observation point).
-Hence, the aim of inverse model is to decrease error in representation of energy fluxes. The equation (\ref{invm_eq:5}) can be solved separately for zonal and meridional fluxes and also simultaneously for both directions. That is at each iteration step the nudge-factor is found first for zonal, than for meridional direction and finally, for both simultaneously. At the end pressure distribution is changed by average from all three substeps.\\
-Note the inverse model equation (\ref{invm_eq:5}) is supported by additional condition stating that 
-amplitude is nonnegative, $p_i^m + \delta p_i^m \geq 0$. All of this numerically is solved by 
-linear programming routine \text{lsei} (least square with inequality) provided by LINPACK package.\\
-Here it will be presented a test convergence and number tests on robustness on proposed iterative 
-inverse model. The initial flux field is given by Fig. \ref{invm_fig:1} where by crosses are shown 
-observational points. This define prescribed $F_{j}^x$ or $F_{j}^y$. Note that the prescribed field 
-aims to describe midbasin energy flux field with Tasman shelf ommitted due to presence of 
-reflection and complex bathymetry. The point sources distribution are given by green dots and at 
-the first iteration step are set to $p^0_i = 100 Pa$. The distribution of points sources is 
-representative to distribution of steep bathymetry which is belived to be an internal tide 
-generator. In the inverse model there are only two parameters that describe characteristic of the 
-internal tide, wavenumber and normalization coefficients used in energy flux. Both are found from 
-solving eigenvalue for randomly picked stratification profile. This result in wavelength of 
-$180~km$ which is a representative value for Tasman Sea conditions. In the same way eigenfunctions 
-are obtained and normalization coefficients are found.\\
-Hence, the inverse model does not account for
-\begin{enumerate}
-\item Bathymetry variation
-\item Stratification variability
-\item Variation of barotropic tide along ridges
-\end{enumerate}
-The first two points are thought to have minor effect on internal tidal beam structure. While the third is omitted to preserve simplicity of generation model. Additional tests were done with variation in barotropic tide phase along ridges, but they did not bring any substantial changes in foregoing results.\\
-To show convergence of the inverse model it is given change in pressure amplitude with each iteration. Here convergence is defined by
-\begin{equation*}
-Conv = \sum_i \frac{(p_i^m - p_i^{m-1})^2}{(0.5 \cdot (p_i^m + p_i^{m-1}))^2}
-\end{equation*}
-The iterative solver is stopped when convergence is reaching tolerance. Here it is set to 0.01. From Figure (2a) it is seen that by 17th iteration there is no appreciable change in the inverse solution. This means that influence of non-linear terms in (\ref{invm_eq:3}) became negligible and the distribution of amplitude along the source region is the best in least square sense. The error of such description is given on subsequent panels of Fig. 2, where root-mean-square-error for different energy flux parameters is defined for example zonal component as
-\begin{equation}
-E_{x} = \sqrt{\frac{\sum_{obs} (F_i^x - \hat{F}_i^x)^2}{N_{obs}}}
-\end{equation}
-As it is seen the error is approaching stability for all used components much faster than 
-convergence in amplitude. Note that the error is larger in zonal fluxes. The inverse solution can 
-not predict far field behavior which is believed due to interaction with East Tasman Plateau. The 
-obtained solution is given by Fig. 3. Here it is found that the inverse solution can not well 
-represent the beam close to East Tasman Plateau. The following reasons can be named: interaction 
-with topography and inadequacy of cylindrical wave model in the far-far field. It is believed that 
-the second reason is the main. In general, the inverse solution picks up the central beam pretty 
-well, outlines its boundary and the major region is satisfying manner. As well note that the 
-northern and southern beams are also found in the solution.
+%\renewcommand{\thesubsection}{\Alph{subsection}}
+%\setcounter{subsection}{0}
+%\subsection{Analytical model for knife edge}
+%Let consider a simplified problem of the internal tide generation at a three dimensional ridge. 
+%That is generating topography has extent in along x-axis, $a$, but infinitely small width. We will 
+%not pursue full solution of the problem and will not seek actual amplitudes of baroclinic modes, 
+%but rather concentrate on defining spatial pattern of the generated waves (might move up to 
+%opening). Under such problem statement the actual height is of no importance. And hence, in frame 
+%reference traveling with barotropic current, the topography becomes a piston-alike wavemaker that 
+%sends out the lowest mode internal tide. Its behavior in flat bottom ocean is well represented by 
+%Laplace tidal equations (cf \cite{kelly2012cascade}):
+%\begin{align}
+%\vec{u}_t + 2 \Omega \vec{k} \times \vec{u} = - \frac{1}{\rho_0} \nabla \cdot p\\
+%\nabla \cdot \vec{u} = -(\frac{1}{N^2 - \omega^2}p_z)_{tz}
+%\end{align}
+%with boundary conditions on the ridge,
+%\begin{equation}
+%\vec{u}\cdot \vec{n}|_{ridge} = \vec{u}_{bt} \cdot \vec{n} |_{ridge}
+%\end{equation}
+%And boundary condition in the infinity implying outgoing waves. Note that barotropic current, in 
+%general, is given as a current ellipse written in complex form as $\vec{u}_{bt} = u_{bt} + i 
+%v_{bt}$. This means that the boundary condition does not have a simple harmonic form. But the 
+%barotropic current can be decomposed to clockwise (CW) and counterclockwise components,
+%\begin{equation}
+%\vec{u}_{bt} = W_{CW} e^{-(i \omega t - \phi_{CW})} + W_{CCW} e^{(i \omega t + \phi_{CCW})}
+%\end{equation}
+%and the generation of internal tide can be solved separately for two oppositely rotating currents. 
+%In further discussion the only one component (CCW) is taken care of since a solution will have 
+%similar form with differences arising in sign in front of tidal frequency.\\
+%Considering rigid lid approximation and impermeable bottom equations for eigen modes is solved 
+%such that wavelength of corresponding mode is introduced. Than the dynamical equations can be 
+%reformulated as Helmholtz equation with harmonic temporal dependence implied and appropriate 
+%polarization relations,
+%\begin{align}
+%\nabla^2 p + k_n^2 p = 0\\
+%u = \frac{-i \omega p_x + f p_y}{\omega^2 - f^2},~v = \frac{-i \omega p_y - f p_x}{\omega^2 - f^2}
+%\end{align}
+%Since the problem is now formulated in terms of pressure only, boundary condition takes the 
+%following form (\cite{greenspan1968theory}),
+%\begin{equation}
+%\Big[ \frac{-i \omega p_y - f p_x}{\omega^2 - f^2} \Big]_{ridge} = \vec{u}_{BT}|_{ridge}
+%\end{equation}
+%The above equations (5-8) state generation of internal tides by vibrating strip of width $a$. Such 
+%problem was solved for radiation of acoustic waves by \cite{morse1946methods}. Since in Cartesian 
+%coordinates the strip boundary condition does not allow separation of variables, one can employ 
+%elliptic coordinate system,
+%\begin{equation*}
+%x = \frac{a}{2} \cosh \mu \cos \theta,~y = \frac{a}{2} \sinh \mu \sin \theta
+%\end{equation*}
+%where edges of the strip will be focii of ellipse, boundary condition will take simpler form,
+%\begin{align}
+%\Big[ \frac{-i \omega p_{\mu} + f p_{\theta}}{\omega^2 - f^2} \Big]_{\mu = 0} = \frac{a}{2} \sin 
+%\theta (\vec{u}_{BT}|_{\mu = 0})
+%\end{align}
+%The factor $\frac{a}{2} \sin \theta$ arises via conversion from Cartesian to elliptical 
+%derivatives. Note change of sign for $p_{theta}$ because opposite growth of $\theta$ argument to 
+%$x$ argument. Laplace operator in the elliptical coordinates has eigensolutions (''sloshing 
+%modes") 
+%in form of Mathieu functions (\cite{stratton2007electromagnetic}) that solution for the emitted 
+%waves will have form of,
+%\begin{equation}
+%p \sim \sum_{j} [Se_j, So_j](h, \theta) [Je_j, Jo_j, Ye_j, Yo_j](h, \mu)
+%\end{equation}
+%with $Se_j,~So_j$ - angular Mathieu functions of order $j$ corresponding to $\cos$ and $\sin$, 
+%$Je_j,~Jo_j$ and $Ye_j,~Yo_j$ - radial Mathieu functions of the first and second kind of order $j$ 
+%corresponding to Bessel functions. The physical parameter that sets Mathieu functions behavior is 
+%$h = {a k_n}{4} $ so that in large distance limit, $h \mu \gg 1,~rk_n \gg a$, they will represent 
+%circular harmonics.\\
+%Now RHS of boundary condition (9) can be expressed in series of Mathieu functions,
+%\begin{equation}
+%\sin \theta = \sum_{j = 0}^{\infty} C_{2j + 1} So_{2j + 1} (\theta)
+%\end{equation}
+%with coefficients $C_{2j + 1}$ defined by normalization constants $N_{2j + 1} = \int_{0}^{2\pi} 
+%So_{2j + 1}^2(\theta) d \theta$ and the first Fourier coefficient of $So_{2j + 1}$. The above 
+%series for $\sin$ and form of the boundary condition suggest solution in the form,
+%\begin{equation}
+%p(\mu, \theta) = \sum_{j = 0}^{\infty} \big( A_{2j+1} So_{2j + 1}(\theta) + B_{2j+1} Se_{2j + 
+%1}(\theta) \big) Ho^{1}_{2j + 1}(\mu)
+%\end{equation}
+%Here $Ho^{1}_{2j + 1}(\mu) = Jo_{2j + 1} + i Yo_{2j + 1}$ is a Hankel-Mathieu function. For CCW 
+%component to ensure condition for outgoing radiation, the sign should be different, so $Ho^{2}_{2j 
+%+ 1}(\mu) = Jo_{2j + 1} - i Yo_{2j + 1}$.\\
+%Now substituting (11, 12) into (9) the unknown coefficients $A,~B$ are obtained,
+%\begin{align*}
+%(-i\omega (\sum A So + B Se) Ho^{\prime} + f (\sum A So^{\prime} + B Se^{\prime}) Ho) = \sum 
+%(\omega^2 - f^2) C So
+%\end{align*}
+%At first, multiplying above equation by $So_{2m + 1}$ and taking integral from 0 to $2 \pi$, so 
+%that $\int_{0}^{2\pi} So_{2m + 1} Se_{2j + 1} d \theta = \int_0^{2 \pi} So_{2j + 1}^{\prime} 
+%So_{2m 
+%+ 1} d \theta = 0,~\int_0^{2 \pi} So_{2m + 1} So_{2m+1} d \theta = No_{2m + 1},~\int_0^{2 \pi} 
+%So_{2m + 1} Se_{2j + 1}^{\prime} d \theta = -{N^{\prime}}^{2m+1}_{2j + 1}$. In the last statement 
+%orthogonality between $So$ and $Se^{\prime}$ is not satisfied. Equation on each order is obtained
+%\begin{align}
+%(-i \omega A_{2m + 1} No_{2m + 1}^o Ho_{2m + 1}^{\prime} + f \sum_{j} B_{2j + 1} 
+%{Neo^{\prime}}^{2m + 1}_{2j + 1} Ho_{2j + 1}) = C No_{2m + 1}
+%\end{align}
+%And at second, carrying out the same procedure but with $Se_{2j + 1}$,
+%\begin{align}
+%(-i \omega B_{2m + 1} Ne_{2m + 1} Ho_{2m + 1}^{\prime} + f \sum_j A_{2j + 1} {Noe^{\prime}}^{2m + 
+%1}_{2j + 1} Ho_{2j + 1}) = 0
+%\end{align}
+%Note that $\int_0^{2\pi} Se^{\prime}_{2j + 1} So_{2m + 1} d \theta = -\int_0^{2\pi} 
+%So^{\prime}_{2j + 1} Se_{2m + 1} d \theta$, i.e. ${Noe^{\prime}}^{2m + 1}_{2j + 1} = 
+%-({Neo^{\prime}}^{2m + 1}_{2j + 1})^T$.\\
+%Equations (13) and (14) form a linear system to find coefficients for different component of the 
+%total field. These equations are solved numerically with $j_{max} = 5$ due to rapid convergence of 
+%the involved series.
+%
+%\subsection{Inverse model}
+%The model closely follows ideas used in ref-to-Luc, 2010 and -Jody-2016. The internal tide 
+%generating ridge is given by point sources each emitting following
+%\begin{equation} \label{invm_eq:1}
+%p = p_{0} \frac{2}{\pi k d} \cdot e^{i  k  d}
+%\end{equation}
+%where $k$ - wavenumber associated with eigen mode-1, i.e. $k = \sqrt{\omega ^ 2 - f ^ 2}{c_{eigen} 
+%^ 2}$, $d$ - distance between a point source and an observation point. By observation points here 
+%and after is meant points in which observations are inverted. The given solution is a solution of 
+%pressure distrubance propagation for two dimensional wave equation (p. 22, Frisk) and describes 
+%outgoing cylindrical wave. This is a far field approximation ($kd \ll 1$), in the near source zone 
+%the solution is substituded by Hankel functions. Here representation is simplified and observation 
+%points on the distance less than wavelength are omitted. Though introduction of Hankel function 
+%into the inverse model does not involve any additional complexity. By pressure here is thought 
+%mode-1 pressure amplitude that can be connected to sea level disturbance or isopycnal 
+%displacements.\\
+%To describe energy fluxes in the observational points polarization relations for cylindrical 
+%Poincare wave are invoked,
+%\begin{align} \label{invm_eq:2}
+%u = \frac{p_{0}}{\rho_{const}} * \frac{-i \omega \cos(\theta) + f \sin(\theta)}{\omega ^ 2 - f ^ 
+%2} \cdot p_{\vec{d}}\\
+%v = \frac{p_{0}}{\rho_{const}} * \frac{-i \omega \sin(\theta) - f \cos(\theta)}{\omega ^ 2 - f ^ 
+%2} \cdot p_{\vec{d}}
+%\end{align}
+%where $p_{\vec{d}}$ is a derivative along radius-vector $\vec{d}$,
+%\begin{equation}
+%p_{\vec{d}} = (i \cdot k - \frac{1}{2 d}) p
+%\end{equation}
+%In further description of the inverse model it is used following notation, indices $i,~k$ define 
+%$i,~k$-th point sources, while $j$ - $j$-th observation point.\\
+%The tidally and depth averaged energy fluxes will be given as an interference of pointwise fields 
+%from all sources,
+%\begin{align}
+%F_{j}^x = \frac{1}{2} \sum_k u_{kj}^{\star} \sum_i p_{ij} \int_H^0 \psi_1(z)^2 dz\\
+%F_{j}^y = \frac{1}{2} \sum_k v_{kj}^{\star} \sum_i p_{ij} \int_H^0 \psi_1(z)^2 dz
+%\end{align}
+%Note different indexes for u/v and p meaning that cross multiplication is involved which leads to 
+%complex interference pattern. In energy flux formulation normalization coefficient associated with 
+%eigenmode structure function are introduced by corresponding mode-1 structure function, 
+%$\psi_1(z)$. Coefficient $1/2$ is used for convenience to convert actual time averaging involved 
+%to 
+%multiplication of complex numbers. In further description the constant coefficients are omitted 
+%due 
+%to their irreleveance. The previous relations can be expressed in matrix form (it is not fully 
+%correct for fluxes, multiplication is done term by term per point),
+%\begin{align}
+%p_j = B^p_{ji}{p_i},~u_j = B^u_{ji}{p_i},~v_j = B^v_{ji}{p_i}\\
+%F^x_j = (B^u_{jk}{p_k})^{\star} B^p_{ji}{p_i},~F^y_j = (B^v_{jk}{p_k})^{\star} B^p_{ji}{p_i} 
+%\label{invm_eq:4}
+%\end{align}
+%where tensor notation is used, i.e. summation is done over same indices. Matrices 
+%$B^p_{ij},~B^u_{ij},~B^v_{ij}$ are short notation for generaion model and polarization relations, 
+%for example,
+%\begin{equation}
+%B^p_{ji} = p_i \frac{2}{\pi k d_j} \cdot e^{i  k  d_j}
+%\end{equation}
+%These can be thought as disretization of operators transforming distribution of sources into 
+%interference pattern in pressure and velocity fields.\\
+%Apparently, the energy flux relations are non-linear. To deal with this it is proposed an 
+%iterative technique. Let at $m$-th iteration there is a known distribution of wave amplitude at 
+%sources, $p^m_i$, the total energy flux field can be reconstruced by (\ref{invm_eq:4}). Than it is 
+%desired to find a small adjustment $\delta p^m_i$ (``nudge factor") such that residual between 
+%observed field and analytical description will be decreased. One can write,
+%\begin{align}
+%F_{j}^x = (B^u_{jk}(p^m_k + \delta p^m_k))^{\star} B^p_{ji}(p^m_i + \delta p^m_i) = \nonumber\\
+%(B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} p^m_i + 
+%(B^u_{jk} p^m_k)^{\star} B^p_{ji} \delta p^m_i + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} \delta 
+%p^m_i\nonumber\\
+%F_{j}^x - (B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} = (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} 
+%p^m_i + (B^u_{jk} p^m_k)^{\star} B^p_{ji} \delta p^m_i + (B^u_{jk} \delta p^m_k)^{\star} B^p_{ji} 
+%\delta p^m_i \label{invm_eq:3}
+%\end{align}
+%The left hand side of (\ref{invm_eq:3}) represents the residual, the right hand side sets a 
+%controlling equation to obtain adjustment neceassary to decrease the residual. The last term of 
+%RHS 
+%shows a non-linear nature of the problem. This is omitted since the purpose of conseqeunt 
+%iterative 
+%technique is to find the final source distribution such that the model equations (\ref{invm_eq:4}) 
+%are satisfied in least square sense. Than the ``nudge-factor" can be found as inverse of 
+%\begin{equation}
+%F_{j}^x - (B^u_{jk} p^m_k)^{\star} B^p_{ji}{p^m_i} = R_j^x = \Big[ (B^u_{jk} )^{\star} B^p_{ji} 
+%p^m_i + (B^u_{jk} p^m_k)^{\star} B^p_{ji} \Big] \delta p^m_i \label{invm_eq:5}
+%\end{equation}
+%(these equations are not in matrix form, but obsevation point by observation point).
+%Hence, the aim of inverse model is to decrease error in representation of energy fluxes. The 
+%equation (\ref{invm_eq:5}) can be solved separately for zonal and meridional fluxes and also 
+%simultaneously for both directions. That is at each iteration step the nudge-factor is found first 
+%for zonal, than for meridional direction and finally, for both simultaneously. At the end pressure 
+%distribution is changed by average from all three substeps.\\
+%Note the inverse model equation (\ref{invm_eq:5}) is supported by additional condition stating 
+%that 
+%amplitude is nonnegative, $p_i^m + \delta p_i^m \geq 0$. All of this numerically is solved by 
+%linear programming routine \text{lsei} (least square with inequality) provided by LINPACK 
+%package.\\
+%Here it will be presented a test convergence and number tests on robustness on proposed iterative 
+%inverse model. The initial flux field is given by Fig. \ref{invm_fig:1} where by crosses are shown 
+%observational points. This define prescribed $F_{j}^x$ or $F_{j}^y$. Note that the prescribed 
+%field 
+%aims to describe midbasin energy flux field with Tasman shelf ommitted due to presence of 
+%reflection and complex bathymetry. The point sources distribution are given by green dots and at 
+%the first iteration step are set to $p^0_i = 100 Pa$. The distribution of points sources is 
+%representative to distribution of steep bathymetry which is belived to be an internal tide 
+%generator. In the inverse model there are only two parameters that describe characteristic of the 
+%internal tide, wavenumber and normalization coefficients used in energy flux. Both are found from 
+%solving eigenvalue for randomly picked stratification profile. This result in wavelength of 
+%$180~km$ which is a representative value for Tasman Sea conditions. In the same way eigenfunctions 
+%are obtained and normalization coefficients are found.\\
+%Hence, the inverse model does not account for
+%\begin{enumerate}
+%\item Bathymetry variation
+%\item Stratification variability
+%\item Variation of barotropic tide along ridges
+%\end{enumerate}
+%The first two points are thought to have minor effect on internal tidal beam structure. While the 
+%third is omitted to preserve simplicity of generation model. Additional tests were done with 
+%variation in barotropic tide phase along ridges, but they did not bring any substantial changes in 
+%foregoing results.\\
+%To show convergence of the inverse model it is given change in pressure amplitude with each 
+%iteration. Here convergence is defined by
+%\begin{equation*}
+%Conv = \sum_i \frac{(p_i^m - p_i^{m-1})^2}{(0.5 \cdot (p_i^m + p_i^{m-1}))^2}
+%\end{equation*}
+%The iterative solver is stopped when convergence is reaching tolerance. Here it is set to 0.01. 
+%From Figure (2a) it is seen that by 17th iteration there is no appreciable change in the inverse 
+%solution. This means that influence of non-linear terms in (\ref{invm_eq:3}) became negligible and 
+%the distribution of amplitude along the source region is the best in least square sense. The error 
+%of such description is given on subsequent panels of Fig. 2, where root-mean-square-error for 
+%different energy flux parameters is defined for example zonal component as
+%\begin{equation}
+%E_{x} = \sqrt{\frac{\sum_{obs} (F_i^x - \hat{F}_i^x)^2}{N_{obs}}}
+%\end{equation}
+%As it is seen the error is approaching stability for all used components much faster than 
+%convergence in amplitude. Note that the error is larger in zonal fluxes. The inverse solution can 
+%not predict far field behavior which is believed due to interaction with East Tasman Plateau. The 
+%obtained solution is given by Fig. 3. Here it is found that the inverse solution can not well 
+%represent the beam close to East Tasman Plateau. The following reasons can be named: interaction 
+%with topography and inadequacy of cylindrical wave model in the far-far field. It is believed that 
+%the second reason is the main. In general, the inverse solution picks up the central beam pretty 
+%well, outlines its boundary and the major region is satisfying manner. As well note that the 
+%northern and southern beams are also found in the solution.
 
 \newpage
 \section{Figures}
 
 \begin{figure}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.75]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/aux/main_ridge_fl_modes.png}
-\caption{Change in energetics of the beam.}
-\end{figure}
-
-\begin{figure}
-\centering
-\mfig[0.75]{converg.png}
-\caption{Convergence}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_1_BT_tide.png}
+	\caption{Comparison of $M_2$ sea level oscillations simulated by ROMS (left panel) with 
+	TPXO-model (right panel).}
+	\label{C3.fig:BT}
 \end{figure}
 
 \begin{figure}
-\centering
-\mfig[0.5]{conv_fluxes.png}
-\caption{Left panel - Overlaid isolines of energy flux magnitude of magnitude 1, 3, 5 kW/m. Middle panel - input data. Right panel - inverse solution.}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_2_uni_flux.png}
+	\caption{Beam of Tasman Sea with major internal tide production sites identified by superposed 
+	heat map.}
+	\label{C3.fig:beam}
 \end{figure}
 
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_3_gen.png}
+	\caption{Generation of internal tides at Macquarie Ridge. (a) The heatmap illustrates 
+	criticality in the region of major generation. And ellipses are representative of barotropic 
+	current. (b) The diagnosed conversion rates for 'uniform' experiment. The boxes outline regions 
+	used in further analysis. (c) Variability of conversion rates in the three regions identified 
+	on the previous panel.}
+	\label{C3.fig:gen}
+\end{figure}
 
-\newpage{TO DO LIST}
-\begin{itemize}
-\item Polish: Clin and energy budget, knife edge, WKB-stretching, standing wave
-\item Inverse model, elliptic waves are the way to go, why the phase can not be planar over much smaller stripes, something wrong with formulation of generation problem. See acoustics paper.
-\item Why in new experiments the beam did not move?
-\item Reasons for incoherence?
-\item Is there going to be any seasonal cycle?
-\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_4_stand_wave_2by2.png}
+	\caption{Standing wave between Macquarie Ridge and Auckland Escarpments. (a) Distribution of 
+	horizonal kinetic energy in 'uniform' simulation with overlaid energy flux of total mode-1 
+	field. (b) Energy flux map of the westward component and the eastward component (c). Variation 
+	in energy characteristics of mode-1 field between Macquarie Ridge and Aucklands Escarpment. The 
+	integrated flux was obtained for a 	dashed transect in (c) and is given by arrows. Dots show 
+	conversion rates spatially integrated over boxes given on (\fignm{C3.fig:gen}, b).}
+	\label{C3.fig:stand_wave}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_5_2d_section_sill.png}
+	\caption{Distribution of baroclinic fields during ebb and slack tide along transect crossing 
+	Macquarie Ridge on \fignm{C3.fig:gen}, (b). (a-d) Baroclinic pressure anomaly with superposed 
+	isopycnal displacements given by contour lines. Positive color is assigned to lifted interfaces 
+	and negative - for the opposite. Stick lines show currents. And white line is distribution 
+	of barotropic velocity. The tideward and leeward sides of Macquarie Ridge are identified by 
+	vertical solid and dashed lines. On (e) it is shown time progression of 
+	baroptropic-to-baroclinic conversion for both experiments and ridge sides. While (f) gives 
+	distribution of period averaged conversion rate along the transect. The same is for (g) where 
+	progression of mode-1 baroclinic pressure is shown by phases of total field and elemental 
+	components. The phases are referenced to flood current across the sill.}
+	\label{C3.fig:gen_2d}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_6_scatter_generation.png}
+	\caption{Variation of the tideward conversion rates in relation to mode-1 energy transmitted 
+	across the sill (a), to travel time across Solanders Trough (b), to knife-edge barrier 
+	representative of Macquarie Ridge seeing from the deep ocean.}
+	\label{C3.fig:gen_regr}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_8_along_beam.png}
+	\caption{Along beam variation of across averaged energy characteristics. For all panels - solid 
+	black line is mean value and thin gray lines for each particular realization. Purple lines show 
+	mean deviation of realizations for mean. (a) Direction of energy flux. The dashed line is 
+	produced by regression with second order polynomial. (b) Integrated flux carried by the beam. 
+	Here the dashed line shows mean integrated flux with no account for relative angle with respect 
+	to across beam surface. (c) Ratio between horizontal kinetic energy to available potential 
+	energy. The dashed line is the ratio for a plane wave.}
+	\label{C3.fig:beam_prms}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_9_APE_beam.png}
+	\caption{Superposition of multiple waves.}
+	\label{C3.fig:beam_dcmp}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_10_decomp_cumsum.png}
+	\caption{Variation of the beam.}
+	\label{C3.fig:beam_dcmp_cm}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale = 
+	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_11_along_beam_inv.png}
+	\caption{Variation of beam parameters.}
+	\label{C3.fig:beam_alng_var}
+\end{figure}
 
 \bibliographystyle{apa}
 \bibliography{/home/dmitry/Bibtex_lib/my_first_lib}
