@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \input{/home/dmitry/Work/Research/thesis/FINALE/settings.tex}
-\doublespacing
+%\doublespacing
 %\graphicspath{{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/}}
 
 %\documentclass[PhD_Thesis.tex]{subfiles}
@@ -548,105 +548,223 @@ destroy baroclinic tides.
 %equal ratio there is no energy transport and portion of it is directed towards.\\
 
 \newpage
-\subsection{Characteristics of Tasman tidal beam}
-Widespread energy conversion at Macquarie Ridge produce a clearly defined internal tidal beam 
-(\fignm{C3.fig:beam}). To delineate spatial variability of energy characteristics, their cross-beam 
-averages are introduced (\fignm{C3.fig:beam}); and to investigate respective temporal 
-variations, ensemble-means and standard deviations are reported. It is worth noting that while 
-ensemble-mean allows a straightforward interpretation of mode-1 dynamics, it will incorporate a
-portion of variable (non-stationary) signal since any energy characteristic is a nonlinear quantity 
-\citep{zaron2014time}. On contrary, for instance, a flux found from ensemble-mean pressure and 
-currents will exclusively provide a stationary part. Yet if a mode-decomposed signal is considered, 
-finding the means will entail averaging of vertical basis functions. As a consequence, their 
-orthogonality will not be preserved leading to ambiguity in dynamics. Henceforth, an ordinary mean 
-over realizations of beam's energetics is considered. Performed comparison (not shown) between an 
-ensemble-mean of flux and a flux of ensemble-mean did not reveal significant differences in spatial 
-structure, though magnitude of latter was roughly half smaller.\\
-The spatial-temporal changes are provided by \fignm{C3.fig:beam_prms}. Dashed lines mark 
-second-order polynomial fits \citep{zhao2018satellite} used to remove along-beam oscillations.
-On average, the central beam leaves Macquarie Ridge carrying away 1.6 GW in mainly western 
-direction (\fignm{C3.fig:beam_prms}, (a, b)). In the open ocean, over $\sim100~km$ there is a rapid 
-directional turn, but as the beam progresses, rate of change decreases. The latter regime is an 
-example of refraction \citep{cummins2001north, rainville2006propagation, zhao2018satellite} due to 
-a meridional change of Coriolis parameter and consequently, a phase speed. Same phenomena is also 
-seen in ratio of HKE to APE (\fignm{C3.fig:beam_prms}, (c)). By Tasmania the beam is 
-oriented in northwestern direction ($150^\circ$ from East) and has more available potential 
-energy (APE) at the expense of horizontal kinetic form (HKE). Additional feature is an energy decay 
-(\fignm{C3.fig:beam_prms}, (b)) that is caused by geometrical effects and by dynamical processes 
-such as friction and high mode scattering. Amount of deposited energy was determined by flux 
-divergence and on average comprised $35~\%$ so that the beam brings $1~GW$ of baroclinic energy to 
-Tasmania.\\
-According to the numerical experiments there is a high degree of spatial variability 
-(\fignm{C3.fig:beam_prms}). Flux vectors sinuously deviate from the fit by $\pm 30^\circ$. The 
-alterations align with growth or decline in the flux magnitude. While the energy partitioning 
-reversely follows this arrangement. These aspects of propagation are indicative of interference 
-\citep{martini2007diagnosing, zhao2010long} between the internal tidal beam and remote waves. 
-\fignm{C3.fig:beam_dcmp} attest presence of multi-directional wave field. Its components were 
-extracted by the same method of directional spectra (Appendix A) that was then integrated over 4 
-circular quadrants. Then for each an ensemble-mean was obtained. The northwesterly traveling waves 
-highlight a plane-wave propagation of the internal tidal beam. This component will be 
-referred as a planar beam. Its total energy is partitioned closely following a theoretical 
-prediction. However, contrary to expected equatorward increase of potential energy, there is a 
-decay that pertains to frictional losses. \footnote{Minor oscillations are artifacts of analysis 
-owing to finite size of fitting windows. } Southwesterly waves (\fignm{C3.fig:beam_dcmp}, (b)) 
-originate from Lord Howe Rise and Gilbert Seamount. Both are oriented against the surface tide 
-current (\fignm{C3:fig:geo.map}) and hence, efficiently scatter the barotropic energy (e.g., 
-\fignm{C3.fig:beam}). Macquarie Ridge also emits waves traveling in this quadrant. As these signals 
-interfere with the planar beam,  the aforementioned rapid directional turn close to the ridge can 
-now be easily understood. Further, APE becomes only slightly perturbed, but the ratio clearly 
-demonstrates $\sim 200~km$ modulations. Overall pattern is further complicated with an addition of 
-southeasterly signals. This introduces another spatial frequency of $\sim 150~km$ that is affirmed 
-by spatial variation in the potential energy. This irregularity is limited to region $\sim500~km$ 
-from Cascade Seamount. Because this topographic feature reflects portion of the internal tidal beam 
-and cause existence of SW waves. Note their tenfold weakness to the planar beam. On the 
-last panel additional source of baroclinic tides is discovered at South Tasman Rise. Obviously, 
-presence of the multiple generation sites leads to existence of ``internal tidal swell" 
-\citep{hendry1977observations} which is not strong, but yet obscures the beam propagation.\\
-The interference will inevitably produce signature in the temporal variability 
-(\fignm{C3.fig:beam_prms}, purple lines and thin gray lines). Large changes in energy 
-partitioning is collocated with locations of nodes-antinodes. The flux heading has similar 
-pattern, but degree of variability rises as the tidal beam crosses Tasman Basin. Oppositely, the 
-integrated flux alters less between the simulations and any differences are uniformly distributed 
-through the course of propagation. These observations are detailed by \fignm{C3.fig:beam_dcmp_cm} 
-where previous reconstructions are given with addition of temporal variability informed 
-by along-beam distribution of standard deviations and energy flux variance ellipses. The planar 
-beam has mainly magnitude variation that is associated with different conversion levels 
-at Macquarie Ridge. With distance deviations become apparent in energy flux orientation, so that 
-variability ellipses are becoming slanted to the mean vectors. A striking feature is in uniformity 
-of the ellipse distribution and mean vector orientation. This behavior alludes to changes in 
-generation as a cause. Further, inclusion of the swell produces nodes-antinodes so that now energy 
-density variability concentrates near these locations. Contrary, regardless of spatial modulation 
-in the mean flux vector heading, its variability preserves uniformity. But this characteristic 
-is smeared by the reflected, southeasterly waves. Superposition leads to strong modulations 
-in the deviations. Notably, the magnitude variability is not affected on average. Overall, 
-the total field demonstrates high degree of spatial-temporal alterations. Nevertheless, temporal 
-changes accord with the planar beam behavior and all further complexity arises due to multiple-wave 
-interference.
+\subsection{Characteristics of the Tasman tidal beam}
+Widespread energy conversion at the Macquarie Ridge produce a clearly defined internal tidal beam 
+(\fignm{C3.fig:beam}). Here its energy characteristics are investigated in terms of spatial 
+averages and ensemble means. The spatial averaging takes place in across beam direction 
+illustrated on \fignm{C3.fig:beam}, the ensemble mean is defined as an arithmetic mean of energy 
+quantities among all the experiments. The results are given on \fignm{C3.fig:beam_prms} for 
+spatially-averaged orientation of the energy fluxes to represent beam's heading. Then beam's 
+strength is expressed in terms of the across-beam integrated flux. And to diagnose underlying 
+dynamics the final panel shows ratio of spatially-averaged horizontal kinetic energy (HKE) to 
+available potential energy (APE). All 
+these quantities exhibit high degree of spatial and temporal variability as regions of 
+highs and lows interchange throughout the beam propagation. At first, this complexity is left 
+behind by fitting a second-degree polynomial to the ensemble-means (\fignm{C3.fig:beam_prms}, 
+dashed lines). The fits now emphasize large-scale, gross characteristics of the beam propagation. 
+Such as by the Macquarie Ridge the beam is mainly oriented towards west, but then markedly turns by 
+$25^\circ$ towards north. This transition occurs over the first $200~km$. And further, there is 
+only a slight tendency to the equator. Away from the generation site, this open-ocean behavior is 
+in accord with previous studies \citep{cummins2001north, rainville2006propagation, 
+zhao2018satellite}. They recognized meridional decrease of Coriolis parameter as a cause for 
+decline in phase speed and equatorward refraction of the internal tides. Thereby, near Tasmania the 
+beam is directed northwesterly by angle of $150^\circ$.\\
 
-\section{Discussion}
-The spatial-temporal characteristics present a complication for direct interpretation of 
-diagnosed energy quantities in describing the tidal beam. Its properties are obscured due to 
-interference and hence, needs additional inferences. This is related to variability. It is unclear 
-what can produce beam's energy levels and its orientation/position. Two reasons could be named as 
-accumulating interaction with mesoscale field and generation producing.\\
-Now comparison of the decomposed planar beam can be made 
-with factual observations made by \citep{waterhouse2018observations, zhao2018satellite}. \\
+The other important feature is a decay in the beam's strength. Initially, it carries 1.4 GW 
+(\fignm{C3.fig:beam_prms}, (b)), but then the energy flux vectors are slowly diminishing. This 
+decline is induced by two main factors. At first, geometrical spreading lessens wave energy 
+crossing the constant integration transects. At second, dynamical processes such as friction, 
+energy transfers to higher modes and interaction with ocean circulation introduce irreversible 
+losses into the wave field. To account only for the physical mechanisms, the geometrical effects 
+are removed by calculating energy flux divergence. This produced a mean estimate of $35~\%$ energy 
+loss along the basin transverse and the beam brings $0.9~GW$ of mode-1 energy to Tasmania.\\
 
-\begin{table}
-	\caption{Internal tidal energy flux properties in the far field}
-	\begin{tabular}{ |p{7cm}||p{4cm}|p{4cm}|  }
-		\hline
-		Source & Flux magnitude [$kW/m$] & Heading [$^\circ$] \\
-		\hline
-		This study - all experiments & ~ & No mesoscale \\
-		This study - only field period & ~ & No mesoscale \\
-		Altimetry observations \citep{zhao2018satellite} & $3.9 \pm 2.2$ & $141 \pm 2$ \\
-		Field observations \citep{waterhouse2018observations} &   $3.4 \pm 1.4$ & $149 \pm 3$ \\
-		\hline
-	\end{tabular}
-	\label{ch2:table_exp}
-\end{table}
-\section{Conclusions}
+On scales comparable to mode-1 wavelength ($\sim 180~km$) the depicted gross characteristics are 
+perturbed by  
+notable deviations. For instance, energy flux vectors divert by $\pm 30^\circ$ following an 
+undulating pattern (\fignm{C3.fig:beam_prms}, (a)). Similar spatial variability is observed in the 
+other characteristics. In fact, there is a mutual relation between the alterations. Each turning of 
+the 
+flux vectors aligns with either growth or decline in magnitude and hence, in the integrated flux. 
+At these local extrema the mechanical energy is partitioned similarly to a theoretical plane wave 
+relation (\fignm{C3.fig:beam_prms}, (c)). On contrary, where horizontal kinetic energy overtakes 
+available potential energy, the mean flux orientation aligns with the large-scale propagation 
+pattern and the flux magnitudes are representative of the gross beam's intensity. This situation as 
+well 
+holds when $HKE < APE$. The regions where one form of the mechanical 
+energy prevails correspond to nodes and antinodes. \footnote{In this study such terminology is used 
+in more 
+general sense since no pure standing waves were found.} Respectively, there baroclinic 
+currents are at 
+its strongest or pressure amplitudes are at maximum. Therefore, energy travels in a winding 
+fashion going round a system of nodes and antinodes. This aspect of propagation is indicative of 
+interference \citep{martini2007diagnosing, zhao2010long} between the internal tidal beam and 
+distant baroclinic tides.\\
+
+For further investigation the superposed wave field is decomposed by the same method of 
+directional spectra (Appendix A) as before. However, this time multi-directional components are 
+\footnote{back-}synthesized via integration over 4 circular quadrants. The so-obtained wave fields 
+are then subject to the same procedure of spatial and temporal averaging. The results are shown on 
+\fignm{C3.fig:beam_dcmp}. Here, not surprisingly, the northwestern quadrant 
+\fignmlp[C3.fig:beam_dcmp]{a} contains the largest wave-field components and highlights plane-wave 
+advancement of the tidal beam. Further on, this extracted component will be referred to as a 
+planar. This major property is emphasized in a ratio between HKE and APE that closely follows the 
+theoretical prediction. \footnote{Notable that the gross characteristics given on 
+\fignm{C3.fig:beam_prms} are quite representative of the planar beam.} As well 
+in-situ\footnote{apparent} group speed defined as a ratio of flux magnitude to total mechanical 
+energy is in close agreement with the mode-1 dispersion relation\footnote{Minor oscillations are 
+artifacts of analysis owing to finite size of fitting windows. }. Its relevance is additionally 
+augmented by slight meridional increase in the group speed for the same reason as the meridional 
+internal tide refraction. On average, it takes 6.8 days with the speed of 1.7 m/s to transmit 
+energy 
+from the 
+Macquarie Ridge to Tasmania. This estimate is close to one obtained during the TBEAM study when 
+``age" of the tide, i.e. lag period between observations of spring-neap modulation in barotropic 
+and baroclinic fields, was found to be 6.7 days \citep{waterhouse2018observations}. Nevertheless, 
+the field observations have shown spatial variations of the in-situ group speed and large 
+deviations from the plane wave value. This point is discussed further as the planar beam becomes 
+obscured by interference.\\
+
+Distant baroclinic waves are radiated from multiple bathymetric features scattered around the 
+Tasman Sea. The Lord Howe Rise and Gilbert Seamount \fignmp{C3:fig:geo.map} produce southwesterly 
+wave 
+components shown by the flux vectors on \fignml[C3.fig:beam_dcmp]{b}. They intersect the planar 
+beam in the middle of the Tasman Basin. The resultant superposition is noticeable in APE field 
+\fignmlp[C3.fig:beam_dcmp]{b} as undulating spatial pattern emerge. Length scale of the modulations 
+will be given as wave-vector difference of the two approximately perpendicular fields, $2 
+\pi/\Delta = \frac{1}{2} (\vec{k}_{beam} - \vec{k}_{SW}) = \frac{1}{2} \frac{2 \pi}{180~km} \cos 
+\frac{\pi}{4} \rightarrow  \Delta = 255~km$. This is the distance between two consequent nodes or 
+antinodes. On the other hand, the HKE-to-APE ratio is set by distance between a node and an 
+anti-node and hence, oscillates twice faster, i.e. $\sim 130~km$. This roughly corresponds to the 
+observed spatial variation of $180~km$, the estimate can be improved by considering more realistic 
+angle between the two interfering wave fields. Further, as the southeastern quadrant 
+\fignmlp[C3.fig:beam_dcmp]{c} is taken into account, the modulations show $\sim 90~km$ length scale 
+of variation. This is a result of interference with oppositely traveling waves produced as the 
+planar beam reflects from Tasmania. The partly standing wave is especially noticeable near the East 
+Tasman Plateau where regions of high APE are alternating with low-level bands. The pattern sharpens 
+further as baroclinic tides emitted at the South Tasman Rise are added 
+\fignmlp[C3.fig:beam_dcmp]{d}. 
+Now the overall field has only weak resemblance to the planar beam as small-scale spatial structure 
+prevails. It is evident in antiphase relation between the given energy characteristics. Notable 
+that the ratio is oscillating around the theoretical value, while the in-situ group speed becomes 
+smaller its planar value as the complexity arises. In the total field information travels with 
+$1.4~m/s$ resulting in 1.5 day later arrival of the spring-neap cycle to the far-field. This result 
+contradicts the TBEAM observations of the age of the tide.\\
+
+\footnote{This paragraph will undergo large changes}Overall, it was established that in the complex 
+field interference has not affected 
+actual wave group propagation, but on contrary the in-situ group speed can largely deviate from the 
+plane-wave dispersion relation. But principles of wave mechanics \citep[e.g.,][]{Lighthill2001} or 
+\citep[e.g.,][]{leblond1978preface} equate the in-situ group speed with the energy propagation 
+velocity, hence, there is an inconsistency that deserves explanation. Contrary to the in-situ group 
+speed, definition of the group speed by $c_g = \pder[\omega]{k}$ is based on dispersion in wave 
+packet consisted of closely 
+spaced harmonics such as the principle lunar and solar tidal species. Their respective wave fields 
+can be largely distinct so that wave group propagation takes absolutely different pathway. This can 
+be realized in multiple source wave field where not all internal tide production sites have 
+pronounced spring-neap cycle. In the setting of the Tasman Sea $S_2$ barotropic wave has strong 
+enough currents at the Macquarie Ridge to create far-flung internal waves. At other locations 
+cross-isobath currents are weaker and so internal tide generation is less expected. Unfortunately 
+satellite observations of the principle solar mode-1 tide \citep{zhao2017global} do not provide any 
+conclusive arguments. So it is speculated that $S_2$ internal tide is not impacted by interference 
+and the beat signal from the Macquarie Ridge is transmitted with the planar value even that 
+baroclinic $M_2$ field has complicated spatial structure. Hence, the apparent group speed is 
+reasonable to estimate arrival of the spring-neap beat if and only if the tidal constituents 
+experience similar spatial modulation due to superposition \citep[e.g.,][]{holloway2003spring}.\\
+
+The previous description of the ensemble-mean wave fields suggests possibility of interference to 
+control some of temporal variability. This is investigated by calculation of standard deviations in 
+the spatial averages. These results are presented on 
+\fignm{C3.fig:beam_prms} by red (standard deviation) and thin gray lines (each realization). 
+Clearly, previously outlined characteristics are preserved and stationary. Such that large 
+differences in the energy partitioning between the experiments are collocated with position of 
+nodes and antinodes. And as the flux vectors turn around these points, vector orientation can 
+substantially vary. Nevertheless, the integrated flux alters less and differences are more uniform 
+through the course of the beam propagation. These facts suggest that variance in magnitude of the 
+interfering waves produce the shifts. To detail such processes the temporal variability is 
+investigated in the previously obtained reconstructions \fignmp{C3.fig:beam_dcmp_cm}. Here the 
+along-beam distribution of standard deviations and energy flux variance ellipses are documented as 
+complexity arises by adding the components in counterclockwise manner. 
+\fignml[C3.fig:beam_dcmp_cm]{a} depicts planar beam variation. It is mainly seen in magnitude 
+of the wave field as a result of changes in conversion levels at the Macquarie Ridge. As the beam 
+travels away variability also becomes apparent in the energy flux direction and hence, heading of 
+the beam. This is observed as variance ellipses are obliquely oriented to the mean vectors. 
+Overall, there is a high degree of spatial uniformity in the planar beam variability, so that 
+standard deviations in the spatial averages are relatively constant 
+\fignmlp[C3.fig:beam_dcmp_cm]{a, inset}. Nevertheless, deviation in the beam heading increases as 
+the beam travels across the basin. These features allude to changes in generation or large-scale 
+refraction by ocean media as main reasons and are discussed further in the text.\\
+The planar beam and its simple temporal variability start to disappear as the distant waves are 
+superposed. Inclusion of the internal tidal swell (Southwesterly\footnote{ or Northeasterly} 
+waves, \fignml[C3.fig:beam_dcmp_cm]{b}) leads to appearance of nodes-antinodes and consequently,  
+concentration of the energy density. This is translated into temporal variability. As an example, 
+deviations in HKE are not monotonic anymore and experience jumps in magnitude over 180 km distance. 
+The same holds for the variance of the energy fluxes. Tilt of the ellipses from the mean 
+follows an alternating pattern of increase and decrease. This coincides with changes in the 
+ensemble-mean flux magnitude. Additionally, the interference increases variation of the spatially 
+averaged flux orientation. Further, the wave field and its changes 
+become more elaborate as the reflected waves are added \fignmlp[C3.fig:beam_dcmp_cm]{c}. While 
+previously the ellipses were still rectilinear and partly aligned with the planar beam heading, 
+they now take oval shape and hence, represent more isotropic distribution. This is understood 
+from emergence of the partial standing wave that reorients the flux vectors transversely to 
+interfering components. Such alignment itself and any changes result in isotropic 
+variability. And similar to the mean field, the temporal changes tend to concentrate 
+following a strict spatial pattern highlighted by half mode-1 wavelength modulations in the 
+spatially averaged 
+characteristics. This property is preserved in the total field when Northeasterly swell from the 
+South 
+Tasman Rise is included. There is a slight increase in variability next to the East Tasman Plateau 
+where the swell intersects with the main wave field \fignmlp[C3.fig:beam_dcmp]{d}. As well 
+orientation of the flux vectors and the variance ellipses tend to slightly turn clockwise.\\
+
+\footnote{The following part will also go through rewrite}Overall, 
+there is a large spatial-temporal variability produced both by changes in the planar beam and in 
+the remote waves. Nevertheless, the total field is characterized by the energy fluxes persistently 
+directed in NW direction (except maybe the southern beam edge) and have magnitude representative of 
+the planar beam. The spatial variations can lead to some ambiguity, but do not seem to obscure the 
+gross characteristics of the tidal beam. On the other hand, in the given results it is difficult to 
+identify reasons for temporal variability if point-wise measurements of the total field are taken. 
+In the following discussion the found planar-beam variations are scrutinized in terms of generation 
+and mesoscale effects and obtained ideas are then applied to the TBEAM mooring observations. 
+
+%\footnote{It is worth noting that while 
+%ensemble-mean allows a straightforward interpretation of mode-1 dynamics, it will incorporate a
+%portion of variable (non-stationary) signal since any energy characteristic is a nonlinear 
+%quantity 
+%\citep{zaron2014time}. On contrary, for instance, a flux found from ensemble-mean pressure and 
+%currents will exclusively provide a stationary part. Yet if a mode-decomposed signal is 
+%considered, 
+%finding the means will entail averaging of vertical basis functions. As a consequence, their 
+%orthogonality will not be preserved leading to ambiguity in dynamics. Henceforth, an ordinary mean 
+%over realizations of beam's energetics is considered. Performed comparison (not shown) between an 
+%ensemble-mean of flux and a flux of ensemble-mean did not reveal significant differences in 
+%spatial 
+%structure, though magnitude of latter was roughly half smaller.}
+
+%\section{Discussion}
+%The spatial-temporal characteristics present a complication for direct interpretation of 
+%diagnosed energy quantities in describing the tidal beam. Its properties are obscured due to 
+%interference and hence, needs additional inferences. This is related to variability. It is unclear 
+%what can produce beam's energy levels and its orientation/position. Two reasons could be named as 
+%accumulating interaction with mesoscale field and generation producing.\\
+%Now comparison of the decomposed planar beam can be made 
+%with factual observations made by \citep{waterhouse2018observations, zhao2018satellite}. \\
+%
+%\begin{table}
+%	\caption{Internal tidal energy flux properties in the far field}
+%	\begin{tabular}{ |p{7cm}||p{4cm}|p{4cm}|  }
+%		\hline
+%		Source & Flux magnitude [$kW/m$] & Heading [$^\circ$] \\
+%		\hline
+%		This study - all experiments & ~ & No mesoscale \\
+%		This study - only field period & ~ & No mesoscale \\
+%		Altimetry observations \citep{zhao2018satellite} & $3.9 \pm 2.2$ & $141 \pm 2$ \\
+%		Field observations \citep{waterhouse2018observations} &   $3.4 \pm 1.4$ & $149 \pm 3$ \\
+%		\hline
+%	\end{tabular}
+%	\label{ch2:table_exp}
+%\end{table}
+%\section{Conclusions}
 
 %\newpage
 %\iftoggle{only_Chapter} {
@@ -985,40 +1103,56 @@ with factual observations made by \citep{waterhouse2018observations, zhao2018sat
 \begin{figure}
 	\centering
 	\includegraphics[scale = 
-	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_8_along_beam.png}
-	\caption{Along beam variation of across averaged energy characteristics. For all panels - solid 
-	black line is mean value and thin gray lines for each particular realization. Purple lines show 
-	mean deviation of realizations for mean. (a) Direction of energy flux. The dashed line is 
-	produced by regression with second order polynomial. (b) Integrated flux carried by the beam. 
-	Here the dashed line shows mean integrated flux with no account for relative angle with respect 
-	to across beam surface. (c) Ratio between horizontal kinetic energy to available potential 
-	energy. The dashed line is the ratio for a plane wave.}
+	0.75]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_8_along_beam.png}
+	\caption{Basin variation of cross-beam averaged energy characteristics. For all panels - solid 
+	black line is ensemble-mean value and thin gray lines for each particular realization. Red 
+	lines show one standard deviation in realizations of the spatial averages. The dashed line is 
+	produced by regression of the ensemble-means with a second degree polynomial. Panel (a) gives 
+	spatially averaged direction of the energy fluxes counted counterclockwise from east. (b) 
+	Cross-beam integrated flux. Purple line shows same integrated flux but with no account for 
+	relative angle with respect to across beam section. (c) Ratio between spatially averaged 
+	horizontal kinetic and available potential energies. Purple line is the ratio for a progressive 
+	plane wave.}
 	\label{C3.fig:beam_prms}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[scale = 
-	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_9_APE_beam.png}
-	\caption{Superposition of multiple waves.}
+	0.75]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_9_beam_superposition.png}
+	\caption{Interference in the mode-1 tidal field represented by ensemble-mean fields 4 circular 	
+	quadrants (a-d) organized by counterclockwise order. Panel (a) represents northwesterly 
+	traveling components of the angular spectra. The wave field is comprised both by spatial 
+	variations in Available Potential Energy (color scale) and energy fluxes (arrows). The inset 
+	gives respective variation of across-beam averaged HKE/APE ratio (solid black) and the in-situ 
+	group speed (solid purple). The respective dashed lines show predictions following the  
+	plane-wave theory. Panels (b-c) represent the wave field in the respective quadrants by the 
+	flux vectors. And cumulative result of the superposition in the clockwise order starting from 
+	(a) is shown by APE. The insets show effect of the superposition on the spatial averages. Note 
+	that here the vector magnitudes are 10 times smaller than on panel (a).}
 	\label{C3.fig:beam_dcmp}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[scale = 
-	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_10_decomp_cumsum.png}
-	\caption{Variation of the beam.}
+	0.75]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_10_decomp_cumsum.png}
+	\caption{Variability of mode-1 internal tide in the Tasman Sea. The same wave field 
+	decomposition as in \fignm{C3.fig:beam_dcmp} was used here. Panel (a) shows variation in the 
+	Northwesterly traveling waves. The arrows and color shading are plotted for the ensemble-mean. 
+	Between experiments is given by respective variance ellipses. And standard deviation in the 
+	spatially averaged characteristics is summarized on insets in top right corners.}
 	\label{C3.fig:beam_dcmp_cm}
 \end{figure}
 
-\begin{figure}
-	\centering
-	\includegraphics[scale = 
-	0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_11_along_beam_inv.png}
-	\caption{Variation of beam parameters.}
-	\label{C3.fig:beam_alng_var}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[scale = 
+%	
+%0.5]{/home/dmitry/Work/Research/thesis/FINALE/P3_ITS_GENERATION/figures/fig_11_along_beam_inv.png}
+%	\caption{Variation of beam parameters.}
+%	\label{C3.fig:beam_alng_var}
+%\end{figure}
 
 \bibliographystyle{apa}
 \bibliography{/home/dmitry/Bibtex_lib/my_first_lib}
